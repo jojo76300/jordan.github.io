@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SH Business – Présentation de l'entreprise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #e53935; /* Rouge */
+      --secondary-color: #f57c00; /* Orange */
+      --tertiary-color: #43a047; /* Vert */
+      --quaternary-color: #1976d2; /* Bleu */
+      --background-color: #0f172a;
+      --text-color: #f1f1f1;
+      --secondary-text-color: #b0b0b0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1200px;
+    }
+    .header-content {
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      background-size: cover;
+      background-position: center;
+    }
+    .glass-card {
+      background: rgba(148, 163, 184, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.8);
+      transition: transform 0.3s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-5px);
+    }
+    .team-member-card {
+      transition: transform 0.3s ease;
+    }
+    .team-member-card:hover {
+      transform: scale(1.05);
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(10px);
+      background-color: rgba(15, 23, 42, 0.9);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-gray-100">
+
+  <!-- Menu de navigation fixe -->
+  <nav class="sticky-nav py-4 px-4 shadow-xl">
+    <div class="container mx-auto flex justify-center space-x-6 text-sm md:text-base font-medium">
+      <a href="index.html#internships" class="text-white hover:text-red-400 transition-colors">
+        Retour au portfolio
+      </a>
+      <a href="#about-us" class="text-white hover:text-red-400 transition-colors">À propos</a>
+      <a href="#services" class="text-white hover:text-red-400 transition-colors">Services</a>
+      <a href="#values" class="text-white hover:text-red-400 transition-colors">Valeurs</a>
+      <a href="#contact" class="text-white hover:text-red-400 transition-colors">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Section d'en-tête de l'entreprise -->
+  <header class="header-content text-center py-20 px-4">
+    <div class="container mx-auto">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+        SH Business
+      </h1>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+        Cabinet de conseil spécialisé dans le CRM, la data analytics et le digital,
+        qui accompagne au quotidien grandes entreprises, TPE et PME dans la
+        valorisation de leurs données et la performance de leur marketing. [web:60][web:62][web:68]
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section À Propos -->
+    <section id="about-us" class="py-20 px-4">
+      <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Qui sommes‑nous&nbsp;?</h2>
+          <p class="text-lg text-gray-300 leading-relaxed mb-4">
+            SH Business est un cabinet de conseil français, expert du CRM, du digital
+            et de la data analytics. Il accompagne ses clients depuis la définition
+            du besoin jusqu’à la mise en œuvre opérationnelle des solutions
+            (conseil, développement, déploiement). [web:62][web:60]
+          </p>
+          <p class="text-lg text-gray-300 leading-relaxed mb-4">
+            L’équipe d’experts aide les entreprises à structurer leurs données,
+            analyser leur potentiel, améliorer la connaissance client et définir
+            des stratégies gagnantes pour générer de la croissance et optimiser
+            le retour sur investissement marketing. [web:62][web:68]
+          </p>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            SH Business intervient aussi bien auprès de grands groupes que de
+            TPE/PME, dans des secteurs variés, en France et à l’international. [web:62][web:68]
+          </p>
+        </div>
+        <div class="relative w-full h-80 rounded-3xl overflow-hidden shadow-2xl">
+          <!-- Remplace par un visuel de bureau / data / dashboard si tu en as -->
+          <img src="images/shbusiness-office.jpg"
+               alt="Illustration data & CRM pour SH Business"
+               class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="py-20 px-4 bg-slate-900">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Nos principaux services</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- CRM & connaissance client -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Conseil CRM & connaissance client
+            </h3>
+            <p class="text-sm text-gray-300 mb-3">
+              Définition et mise en place de stratégies CRM pour mieux connaître,
+              segmenter et engager les clients. [web:62][web:60]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Audit et cadrage des besoins CRM.</li>
+              <li>Choix et intégration de solutions CRM adaptées.</li>
+              <li>Campagnes relationnelles et programmes de fidélité. [web:60][web:65]</li>
+            </ul>
+          </div>
+
+          <!-- Data analytics & BI -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Data analytics & Business Intelligence
+            </h3>
+            <p class="text-sm text-gray-300 mb-3">
+              Traitement, analyse et valorisation des données pour orienter les
+              décisions business et marketing. [web:60][web:62]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Structuration des données (data warehousing, ETL).</li>
+              <li>Tableaux de bord et reporting décisionnel.</li>
+              <li>Analyses prédictives et scoring marketing. [web:60][web:67]</li>
+            </ul>
+          </div>
+
+          <!-- Digital & webmarketing -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Digital & webmarketing
+            </h3>
+            <p class="text-sm text-gray-300 mb-3">
+              Accompagnement sur la stratégie digitale, la présence en ligne et
+              les leviers d’acquisition (SEO, SEA, campagnes). [web:65][web:60]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Stratégie webmarketing et pilotage de campagnes.</li>
+              <li>Optimisation des parcours et de l’expérience client digitale.</li>
+              <li>Mesure de la performance et optimisation continue. [web:65]</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Gestion de projet / AMOA -->
+        <div class="mt-12 glass-card rounded-2xl p-8">
+          <h3 class="text-2xl font-semibold mb-3 text-center">
+            Gestion de projet & AMOA
+          </h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">
+            SH Business intervient également en gestion de projet et assistance à
+            maîtrise d’ouvrage (AMOA), pour sécuriser la conduite des projets
+            CRM, data et digitaux, de la phase de cadrage jusqu’au déploiement. [web:67]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Valeurs -->
+    <section id="values" class="py-20 px-4">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Nos valeurs</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-user-tie text-4xl text-sky-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Expertise</h3>
+            <p class="text-sm text-gray-300">
+              Une équipe d’experts métiers et techniques pour adresser les enjeux
+              CRM, data et digital des organisations. [web:62][web:60]
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-sync-alt text-4xl text-emerald-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Agilité</h3>
+            <p class="text-sm text-gray-300">
+              Une approche pragmatique, orientée résultats, avec des cycles courts
+              et un accompagnement de proximité. [web:60][web:67]
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-chart-line text-4xl text-yellow-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Création de valeur</h3>
+            <p class="text-sm text-gray-300">
+              L’objectif central : transformer la donnée en valeur concrète, en
+              améliorant l’expérience client et le ROI marketing. [web:62][web:68]
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-20 px-4 bg-slate-900">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Contact</h2>
+
+        <div class="glass-card rounded-2xl p-8 max-w-xl mx-auto text-center">
+          <p class="text-sm text-gray-300 mb-4">
+            Pour toute demande d’accompagnement CRM, data analytics, digital ou
+            gestion de projet, SH Business peut être contacté directement à La Défense. [web:61][web:65]
+          </p>
+          <p class="text-sm text-gray-300 mb-2">
+            <span class="font-semibold">Adresse :</span>
+            9, Avenue Léonard de Vinci, 92400 Courbevoie – La Défense. [web:61]
+          </p>
+          <p class="text-sm text-gray-300 mb-2">
+            <span class="font-semibold">Email :</span>
+            hsimo@sh-business.fr / commercial@sh-business.fr [web:61][web:65]
+          </p>
+          <p class="text-sm text-gray-300 mb-4">
+            <span class="font-semibold">Téléphone :</span>
+            +33 6 61 92 60 08 [web:61][web:65]
+          </p>
+          <a href="https://www.sh-business.fr"
+             class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-semibold"
+             target="_blank" rel="noopener">
+            Visiter le site officiel
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="py-6 text-center text-gray-500 text-sm">
+    © 2026 Kamguia Siri Jordan. Tous droits réservés.
+  </footer>
+</body>
+</html>

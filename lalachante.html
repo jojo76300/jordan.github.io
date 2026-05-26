@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LalaChante – Présentation du studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #e53935; /* Rouge */
+      --secondary-color: #f57c00; /* Orange */
+      --tertiary-color: #43a047; /* Vert */
+      --quaternary-color: #1976d2; /* Bleu */
+      --background-color: #1a1a1a;
+      --text-color: #f1f1f1;
+      --secondary-text-color: #b0b0b0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1200px;
+    }
+    .header-content {
+      background-color: #111827;
+      background-size: cover;
+      background-position: center;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-5px);
+    }
+    .team-member-card {
+      transition: transform 0.3s ease;
+    }
+    .team-member-card:hover {
+      transform: scale(1.05);
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(10px);
+      background-color: rgba(26, 26, 26, 0.8);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+  <!-- Menu de navigation fixe -->
+  <nav class="sticky-nav py-4 px-4 shadow-xl">
+    <div class="container mx-auto flex justify-center space-x-6 text-sm md:text-base font-medium">
+      <a href="index.html#internships" class="text-white hover:text-red-400 transition-colors">
+        Retour au portfolio
+      </a>
+      <a href="#about-us" class="text-white hover:text-red-400 transition-colors">À propos</a>
+      <a href="#mission" class="text-white hover:text-red-400 transition-colors">Mission & Valeurs</a>
+      <a href="#services" class="text-white hover:text-red-400 transition-colors">Services</a>
+      <a href="#team" class="text-white hover:text-red-400 transition-colors">Équipe</a>
+    </div>
+  </nav>
+
+  <!-- Section d'en-tête de l'entreprise -->
+  <header class="header-content text-center py-20 px-4">
+    <div class="container mx-auto">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+        LalaChante
+      </h1>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        Studio d’enregistrement professionnel dédié au grand public, pour vivre une
+        expérience musicale unique seul, en famille ou entre amis. [page:1]
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section À Propos -->
+    <section id="about-us" class="py-20 px-4">
+      <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Qui sommes-nous&nbsp;?</h2>
+          <p class="text-lg text-gray-400 leading-relaxed mb-4">
+            LalaChante propose une expérience de studio d’enregistrement accessible
+            à tous, sans être professionnel de la musique. L’objectif principal est
+            de faire vivre un moment fort et bienveillant. [page:1]
+          </p>
+          <p class="text-lg text-gray-400 leading-relaxed mb-4">
+            Le studio est implanté au cœur de Toulouse, près du métro Marengo, et
+            dispose également d’un espace à Paris dans le 14ᵉ arrondissement, pour
+            accueillir particuliers, familles et groupes. [page:1]
+          </p>
+          <p class="text-lg text-gray-400 leading-relaxed">
+            L’équipe prend en charge la bande musicale, le coaching vocal, l’enregistrement
+            et la retouche du son, afin de mettre en valeur la voix des participants
+            grâce aux techniques utilisées dans les studios professionnels. [page:1]
+          </p>
+        </div>
+        <div class="relative w-full h-80 rounded-3xl overflow-hidden shadow-2xl">
+          <!-- Mets ici une vraie photo du studio si tu en as une -->
+          <img src="images/lalachante-studio.jpg"
+               alt="Vue du studio d’enregistrement LalaChante"
+               class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Mission & Valeurs -->
+    <section id="mission" class="py-20 px-4 bg-gray-900">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Notre mission & nos valeurs</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-music text-4xl text-red-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Une expérience pour tous</h3>
+            <p class="text-sm text-gray-400">
+              Offrir à chacun la possibilité d’enregistrer une chanson dans un cadre
+              professionnel, que ce soit pour le plaisir, un cadeau ou un souvenir. [page:1]
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-heart text-4xl text-green-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Bienveillance</h3>
+            <p class="text-sm text-gray-400">
+              Mettre les participants en confiance grâce à un coaching vocal et une
+              approche positive, quel que soit leur niveau. [page:1]
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-star text-4xl text-blue-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Qualité studio</h3>
+            <p class="text-sm text-gray-400">
+              Utiliser le même matériel et les mêmes traitements sonores que les
+              artistes, pour un rendu digne d’un véritable studio d’enregistrement. [page:1]
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="py-20 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Nos services</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Studio professionnel
+            </h3>
+            <p class="text-sm text-gray-400 mb-3">
+              Lieu dédié à la musique, équipé comme un studio pro pour des
+              enregistrements de haute qualité. [page:1]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Cabine d’enregistrement et régie son.</li>
+              <li>Matériel audio utilisé par des artistes pros.</li>
+              <li>Conditions idéales pour voix et instruments.</li>
+            </ul>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Coaching & accompagnement
+            </h3>
+            <p class="text-sm text-gray-400 mb-3">
+              Un coach vocal guide les participants pour améliorer la pose de voix
+              et le confort pendant l’enregistrement. [page:1]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Conseils de respiration et d’interprétation.</li>
+              <li>Accompagnement pour les personnes seules ou en groupe.</li>
+              <li>Préparation possible pour castings et maquettes. [page:1]</li>
+            </ul>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Restitution & souvenirs
+            </h3>
+            <p class="text-sm text-gray-400 mb-3">
+              Les enregistrements sont fournis sur plusieurs supports, pour garder
+              une trace durable de l’expérience. [page:1]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>MP3 ou WAV, CD, voire disque vinyle selon l’offre. [page:1]</li>
+              <li>Possibilité de photos et vidéo de la session.</li>
+              <li>Idéal comme cadeau personnalisé ou souvenir de groupe.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cartes des expériences (tarifs) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Expérience Saphir -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <h3 class="text-2xl font-semibold mb-2">Expérience Saphir</h3>
+            <p class="text-sm text-gray-400 mb-4 text-center">
+              Formule d’initiation avec enregistrement sur bande son fournie
+              et restitution en format audio. [page:1]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 mb-4">
+              <li>Bande son incluse.</li>
+              <li>Enregistrement voix + correction des fausses notes. [page:1]</li>
+              <li>Mixage et export MP3 / WAV.</li>
+            </ul>
+            <span class="text-xs text-gray-500">
+              Tarifs ajustés selon le nombre de personnes. [page:1]
+            </span>
+          </div>
+
+          <!-- Expérience Émeraude -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <h3 class="text-2xl font-semibold mb-2">Expérience Émeraude</h3>
+            <p class="text-sm text-gray-400 mb-4 text-center">
+              Formule intermédiaire incluant coaching vocal et souvenirs
+              supplémentaires (photo, pochette). [page:1]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 mb-4">
+              <li>Bande son + coach vocal.</li>
+              <li>Enregistrement, correction, mixage.</li>
+              <li>MP3 / WAV, photo et pochette CD. [page:1]</li>
+            </ul>
+            <span class="text-xs text-gray-500">
+              Supplément par personne au‑delà de 4 participants. [page:1]
+            </span>
+          </div>
+
+          <!-- Expérience Diamant -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <h3 class="text-2xl font-semibold mb-2">Expérience Diamant</h3>
+            <p class="text-sm text-gray-400 mb-4 text-center">
+              Formule la plus complète, adaptée aussi à la préparation de castings
+              ou de maquettes de qualité pro. [page:1]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 mb-4">
+              <li>Bande son, coach vocal et enregistrement complet.</li>
+              <li>Correction, mixage, MP3 / WAV.</li>
+              <li>Photo, pochette CD et vidéo de la session. [page:1]</li>
+            </ul>
+            <span class="text-xs text-gray-500">
+              Tarifs dégressifs pour les groupes et les enfants. [page:1]
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Équipe -->
+    <section id="team" class="py-20 px-4">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">L’équipe du studio</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Coach vocal -->
+          <div class="team-member-card glass-card rounded-2xl p-6">
+            <img src="https://placehold.co/200x200/5a67d8/ffffff?text=Coach+Vocal"
+                 alt="Coach vocal du studio" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+            <h3 class="text-xl font-semibold mb-1">Coach vocal</h3>
+            <p class="text-gray-400 text-sm">
+              Accompagne les participants pendant la session, donne des conseils
+              pour tirer le meilleur de leur voix. [page:1]
+            </p>
+          </div>
+
+          <!-- Ingénieur du son -->
+          <div class="team-member-card glass-card rounded-2xl p-6">
+            <img src="https://placehold.co/200x200/4c7c59/ffffff?text=Ing%C3%A9+son"
+                 alt="Ingénieur du son" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+            <h3 class="text-xl font-semibold mb-1">Ingénieur du son</h3>
+            <p class="text-gray-400 text-sm">
+              Configure le matériel, capture la meilleure prise et applique les
+              traitements audio adaptés. [page:1]
+            </p>
+          </div>
+
+          <!-- Accueil / organisation -->
+          <div class="team-member-card glass-card rounded-2xl p-6">
+            <img src="https://placehold.co/200x200/9b2c2c/ffffff?text=Accueil"
+                 alt="Responsable accueil" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+            <h3 class="text-xl font-semibold mb-1">Accueil & organisation</h3>
+            <p class="text-gray-400 text-sm">
+              Coordonne les réservations, l’accueil des groupes et la préparation
+              des expériences (anniversaires, cadeaux…). [page:1]
+            </p>
+          </div>
+
+          <!-- Communication / vidéos -->
+          <div class="team-member-card glass-card rounded-2xl p-6">
+            <img src="https://placehold.co/200x200/d97706/ffffff?text=M%C3%A9dia"
+                 alt="Responsable média" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+            <h3 class="text-xl font-semibold mb-1">Média & souvenirs</h3>
+            <p class="text-gray-400 text-sm">
+              Gère les photos, vidéos et supports remis aux clients pour garder un
+              souvenir de la session. [page:1]
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact rapide -->
+        <div class="mt-10 glass-card rounded-2xl p-6 max-w-xl mx-auto">
+          <h3 class="text-xl font-semibold mb-2">Contact & réservation</h3>
+          <p class="text-sm text-gray-300 mb-2">
+            Pour réserver une session ou demander un conseil, LalaChante peut être
+            contacté par téléphone ou par mail depuis le site officiel. [page:1]
+          </p>
+          <p class="text-xs text-gray-500">
+            Pour plus d’informations&nbsp;: consultez directement
+            <a href="https://www.lalachante.fr" class="text-blue-400 hover:underline" target="_blank" rel="noopener">
+              www.lalachante.fr
+            </a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="py-6 text-center text-gray-500 text-sm">
+    © 2026 Kamguia Siri Jordan. Tous droits réservés.
+  </footer>
+</body>
+</html>

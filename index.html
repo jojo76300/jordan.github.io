@@ -1,1345 +1,1137 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - KAMGUIA SIRI JORDAN</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #e53935; /* Rouge */
-            --secondary-color: #f57c00; /* Orange */
-            --tertiary-color: #43a047; /* Vert */
-            --quaternary-color: #1976d2; /* Bleu */
-            --background-color: #1a1a1a;
-            --text-color: #f1f1f1;
-            --secondary-text-color: #b0b0b0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Kamguia Siri Jordan | Développeur Web</title>
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            overflow-x: hidden;
-        }
+  <!-- Tailwind CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
 
-        .container {
-            max-width: 1200px;
-        }
+  <style>
+    :root {
+      --primary-color: #e53935;       /* Rouge */
+      --secondary-color: #f57c00;     /* Orange */
+      --tertiary-color: #43a047;      /* Vert */
+      --quaternary-color: #1976d2;    /* Bleu */
+      --background-color: #1a1a1a;
+      --text-color: #f1f1f1;
+      --secondary-text-color: #b0b0b0;
+    }
 
-        .header-content {
-            background-size: cover;
-            background-position: center;
-        }
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
 
-        .btn {
-            @apply px-6 py-3 rounded-full text-white font-bold transition-transform transform hover:scale-105 shadow-lg;
-            background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-        }
+    .container {
+      max-width: 1200px;
+    }
 
-        .icon {
-            @apply text-xl text-white transition-transform transform hover:scale-110;
-        }
+    .header-content {
+      background-size: cover;
+      background-position: center;
+    }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      color: white;
+      font-weight: 600;
+      background-image: linear-gradient(
+        to right,
+        var(--primary-color),
+        var(--secondary-color)
+      );
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
 
-        .glass-card:hover {
-            transform: translateY(-5px);
-        }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
 
-        .progress-bar-container {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 9999px;
-            overflow: hidden;
-            height: 1rem;
-        }
+    .icon {
+      font-size: 1.25rem;
+      color: white;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
 
-        .progress-bar {
-            height: 100%;
-            background-color: var(--primary-color);
-            border-radius: 9999px;
-            transition: width 0.5s ease;
-        }
+    .icon:hover {
+      transform: scale(1.1);
+      color: var(--primary-color);
+    }
 
-        .skill-group-title, .skill-link {
-            transition: color 0.3s ease;
-        }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .skill-group-title:hover, .skill-link:hover {
-            color: var(--primary-color);
-        }
+    .glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    }
 
-        .skill-details-page {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--background-color);
-            z-index: 50;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-            overflow-y: auto;
-        }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(10px);
+      background-color: rgba(26, 26, 26, 0.9);
+    }
 
-        .skill-details-page.show {
-            opacity: 1;
-            visibility: visible;
-        }
+    /* Bouton retour en haut */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-image: linear-gradient(
+        to right,
+        var(--primary-color),
+        var(--secondary-color)
+      );
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+      z-index: 50;
+    }
 
-        .skill-gallery-thumbnail {
-            cursor: pointer;
-            transition: border-color 0.3s ease;
-        }
-        
-        .collapsible-header {
-            cursor: pointer;
-            @apply p-6 flex justify-between items-center rounded-2xl;
-        }
+    #scrollTopBtn.show {
+      opacity: 1;
+      visibility: visible;
+    }
 
-        .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-            @apply pt-4;
-        }
+    #scrollTopBtn:hover {
+      transform: scale(1.08);
+    }
 
-        .collapsible-content.expanded {
-            max-height: 2000px; /* Increased value to allow for more content */
-        }
+    .section-title {
+      @apply text-3xl md:text-4xl font-bold text-center mb-12;
+    }
 
-        .sticky-nav {
-            position: sticky;
-            top: 0;
-            z-index: 40;
-            backdrop-filter: blur(10px);
-            background-color: rgba(26, 26, 26, 0.8);
-        }
-
-        /* Styles pour le bouton de retour en haut */
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 3.5rem;
-            height: 3.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-            z-index: 50;
-        }
-
-        #scrollTopBtn.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        #scrollTopBtn:hover {
-            transform: scale(1.1);
-        }
-    </style>
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: var(--secondary-text-color);
+    }
+  </style>
 </head>
+
 <body class="bg-gray-900 text-gray-100">
-
-    <!-- Menu de navigation fixe -->
-    <nav class="sticky-nav py-4 px-4 shadow-xl">
-        <div class="container mx-auto flex justify-center space-x-6 text-sm md:text-base font-medium">
-            <a href="#about" class="text-white hover:text-red-400 transition-colors">À Propos</a>
-            <a href="#interests" class="text-white hover:text-red-400 transition-colors">Centres d'intérêt</a>
-            <a href="#certifications" class="text-white hover:text-red-400 transition-colors">Certifications</a>
-            <a href="#skills" class="text-white hover:text-red-400 transition-colors">Compétences</a>
-            <a href="#experience" class="text-white hover:text-red-400 transition-colors">Expérience</a>
-            <a href="#projects" class="text-white hover:text-red-400 transition-colors">Projets</a>
-            <a href="#veille" class="text-white hover:text-red-400 transition-colors">Veille</a>
-            <a href="#internships" class="text-white hover:text-red-400 transition-colors">Stages</a>
-            <a href="#contact" class="text-white hover:text-red-400 transition-colors">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Section d'en-tête -->
-    <header class="header-content text-center py-20 px-4">
-        <div class="container mx-auto">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">Kamguia siri jordan</h1>
-        </div>
-    </header>
-    
-    <main>
-        <!-- Section À Propos -->
-        <section id="about" class="py-20 px-4">
-            <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">À Propos de Moi</h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        Je suis Kamguia siri Jordan, étudiant en deuxième année de BTS SIO(Services Informatiques aux Organisations) option SLAM(Solutions Logicielles et Applications Métiers) motivé par l'opportunité de mettre en pratique mescompétences en développement acquises lors de ma formation et passionné, je suis à la recherche d'une Alternance pour la rentree 2026.
-                    </p>
-                </div>
-                <div class="relative w-full h-80 rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="Snapchat-1090016969.png" alt="Photo de profil" style="width: 200px; height: auto;">
-                </div>
-            </div>
-        </section>
-
-                <!-- Section Compétences -->
-        <section id="skills" class="py-20 px-4 items-start lg:flex-row">
-            <div class="container mx-auto items-start lg:flex-row"  >
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Mes Compétences</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 ">
-                    <!-- Groupe Front-end -->
-                    <div class="glass-card rounded-2xl p-4">
-                        <h3 class="text-2xl font-semibold mb-4 text-center skill-group-title" data-skill-id="frontend">
-                            <i class="fas fa-desktop text-orange-500 mr-2"></i>
-                            Front-end
-                        </h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="html_css">HTML & CSS</span>
-                                <span class="text-sm font-light text-gray-400"> </span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-orange-400">                           Expert</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="js_ts">JavaScript & TypeScript</span>
-                                <span class="text-sm font-light text-orange-400"> </span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-orange-400">                           Compétent</span>
-                                    </div>
-                                </div>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                    <!-- Groupe Back-end -->
-                    <div class="glass-card rounded-2xl p-6">
-                        <h3 class="text-2xl font-semibold mb-4 text-center skill-group-title" data-skill-id="backend">
-                            <i class="fas fa-server text-blue-500 mr-2"></i>
-                            Back-end
-                        </h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="nodejs">PHP</span>
-                                <span class="text-sm font-light text-gray-400"> </span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-blue-400">                           Compétent</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="java">Python</span>
-                                <span class="text-sm font-light text-gray-400"> </span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-blue-400">                           Compétent</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="express">C#</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-blue-400">                           Novice</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Groupe DevOps & BDD -->
-                    <div class="glass-card rounded-2xl p-6">
-                        <h3 class="text-2xl font-semibold mb-4 text-center skill-group-title" data-skill-id="devops_db">
-                            <i class="fas fa-cloud text-green-500 mr-2"></i>
-                            DevOps & BDD
-                        </h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="postgresql">PostgreSQL</span>
-                                <span class="text-sm font-light text-gray-400"> </span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-green-400">                           Compétent</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="sqlserver">SQL Server</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-green-400">                           Compétent</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="sqlserver">MySQL</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-green-400">                           Compétent</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="transactsql">Transact-SQL</span>
-                                
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-green-400">                           Novice</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="transactsql">.NET</span>
-                                <span class="text-sm font-light text-gray-400"> </span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-green-400">                           Débutant</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="merise">Merise</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-green-400">                           Expert</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="uml">UML</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-green-400">                           Novice</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="symphony">Symphony</span>
-                                <span class="text-sm font-light text-gray-400"> </span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-green-400">                           Novice</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="symphony">Veille technologique</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-green-400">                           Expert</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="glass-card rounded-2xl p-16">
-                        <h3 class="text-2xl font-semibold mb-4 text-center skill-group-title" data-skill-id="languages">
-                            <i class="fas fa-brain text-red-500 mr-2"></i>
-                            Soft Skills
-                        </h3>
-                        <ul class="space-y-9">
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="french">Communication</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-purple-400">                           </span>
-                                    </div>
-                                </div>
-                               
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="english">Esprit d'équipe et Collaboration</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-purple-400">                           </span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="french">Adaptabilité et Flexibilité</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-purple-400">                           </span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="french">Créativité et Innovation</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-purple-400">                           </span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="french">Prise d'nitiative et Curieux</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-purple-400">                           </span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="french">Assiduité</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-purple-400">                           </span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Groupe Langues -->
-                    <div class="glass-card rounded-2xl p-6">
-                        <h3 class="text-2xl font-semibold mb-4 text-center skill-group-title" data-skill-id="languages">
-                            <i class="fas fa-globe text-purple-500 mr-2"></i>
-                            Langues
-                        </h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="french">Français</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-purple-400">                           Langue maternelle</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="english">Anglais</span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-9">
-                                    <div class="">
-                                        <span class="text-sm font-bold text-purple-400">                           Langue maternelle</span>
-                                    </div>
-                                </div>
-
-                                <!-- Groupe skills -->
-                    
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-
-        <!-- Section Certifications -->
-        <section id="certifications" class="py-20 px-4">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Mes Certifications</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Certification 1 -->
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <h3 class="text-2xl font-semibold mb-4">Certification ANSSI</h3>
-                        <a href="attestation_secnumacademie(1)(1).pdf" download class="block w-full">
-                            <img src="téléchargement (1).png"  class="w-full h-auto rounded-xl shadow-md transition-transform transform hover:scale-105">
-                        </a>
-                        <p class="text-sm text-gray-400 mt-4 text-center">Cliquez sur l'image pour la télécharger.</p>
-                    </div>
-                    <!-- Certification 2 -->
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <h3 class="text-2xl font-semibold mb-4">Certification JavaScript</h3>
-                        <a href="7078047256.pdf" download class="block w-full">
-                            <img src="téléchargement (2).png"  class="w-full h-auto rounded-xl shadow-md transition-transform transform hover:scale-105">
-                        </a>
-                        <p class="text-sm text-gray-400 mt-4 text-center">Cliquez sur l'image pour la télécharger.</p>
-                    </div>
-                    <!-- Certification 3 -->
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <h3 class="text-2xl font-semibold mb-4">JavaScript</h3>
-                        <a href="9610848796.pdf" download class="block w-full">
-                            <img src="téléchargement (3).png"  class="w-full h-auto rounded-xl shadow-md transition-transform transform hover:scale-105">
-                        </a>
-                        <p class="text-sm text-gray-400 mt-4 text-center">Cliquez sur l'image pour la télécharger.</p>
-                    </div>
-                    <!-- Certification 4 -->
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <h3 class="text-2xl font-semibold mb-4">Certification Python</h3>
-                        <a href="3344484850.pdf" download class="block w-full">
-                            <img src="téléchargement.jpeg"  class="w-full h-auto rounded-xl shadow-md transition-transform transform hover:scale-105">
-                        </a>
-                        <p class="text-sm text-gray-400 mt-4 text-center">Cliquez sur l'image pour la télécharger.</p>
-                    </div>
-                    <!-- Certification 5 -->
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <h3 class="text-2xl font-semibold mb-4">Certification PHP</h3>
-                        <a href="3680999701.pdf" download class="block w-full">
-                            <img src="téléchargement (4).png"  class="w-full h-auto rounded-xl shadow-md transition-transform transform hover:scale-105">
-                        </a>
-                        <p class="text-sm text-gray-400 mt-4 text-center">Cliquez sur l'image pour la télécharger.</p>
-                    </div>
-                    <!-- Certification 6 -->
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <h3 class="text-2xl font-semibold mb-4">Certification Gestion de base de données</h3>
-                        <a href="2163064859.pdf" download class="block w-full">
-                            <img src="téléchargement (1).jpeg"  class="w-full h-auto rounded-xl shadow-md transition-transform transform hover:scale-105">
-                        </a>
-                        <p class="text-sm text-gray-400 mt-4 text-center">Cliquez sur l'image pour la télécharger.</p>
-                    </div>
-                    <!-- Certification 7 -->
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <h3 class="text-2xl font-semibold mb-4">Certification mis en place environnement Python</h3>
-                        <a href="3344484850.pdf" download class="block w-full">
-                            <img src="téléchargement (5).png"  class="w-full h-auto rounded-xl shadow-md transition-transform transform hover:scale-105">
-                        </a>
-                        <p class="text-sm text-gray-400 mt-4 text-center">Cliquez sur l'image pour la télécharger.</p>
-                    </div>
-                    <!-- Certification 7 -->
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <h3 class="text-2xl font-semibold mb-4">Développement web avec Angular</h3>
-                        <a href="certif ANGULAR.pdf" download class="block w-full">
-                            <img src="téléchargement (7).png"  class="w-full h-auto rounded-xl shadow-md transition-transform transform hover:scale-105">
-                        </a>
-                        <p class="text-sm text-gray-400 mt-4 text-center">Cliquez sur l'image pour la télécharger.</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- Section Expérience & Éducation -->
-        <section id="experience" class="py-20 px-4">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Expérience & Éducation</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Carte Expérience Professionnelle -->
-                    <div class="glass-card rounded-2xl p-6">
-                        <h3 class="text-2xl font-semibold mb-4 text-center">
-                            <i class="fas fa-briefcase text-red-500 mr-2"></i>
-                            Expérience Professionnelle
-                        </h3>
-                        <div class="space-y-8">
-                            <div>
-                                <h4 class="text-xl font-bold">Stagiaire Développeur Web</h4>
-                                <p class="text-gray-400">ICAB | 2024</p>
-                                <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
-                                    <li>Contribution au développement front-end d'un site de librairie.</li>
-                                    <li>Utilisation de HTML, CSS, et JavaScript pour des fonctionnalités dynamiques.</li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xl font-bold">Stagiaire Développeur Python</h4>
-                                <p class="text-gray-400">Salution House | 2023</p>
-                                <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
-                                    <li>Développement d'un module Odoo ERP</li>
-                                    <li>Conception et gestion de bases de données Postgresql</li>
-                                    <li>Travail en mode projet.</li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xl font-bold">Stagiaire Développeur backend</h4>
-                                <p class="text-gray-400">Lalachante | 2022</p>
-                                <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
-                                    <li>Développement d'un application web</li>
-                                    <li>Conception et gestion de bases de données Workbench</li>
-                                    <li>Travail en mode projet.</li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xl font-bold">Stagiaire gestion de base de données</h4>
-                                <p class="text-gray-400">SH Bussiness | 2021</p>
-                                <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
-                                    <li>Gestion de base de données sur SQLServer</li>
-                                    <li>Traitement de document Excel</li>
-                                    <li>Travail en mode projet.</li>
-                                </ul>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <!-- Carte Éducation & Certifications -->
-                    <div class="glass-card rounded-2xl p-6">
-                        <h3 class="text-2xl font-semibold mb-4 text-center">
-                            <i class="fas fa-graduation-cap text-green-500 mr-2"></i>
-                            Éducation & Certifications
-                        </h3>
-                        <div class="space-y-8">
-                            <div>
-                                <h4 class="text-xl font-bold">2ème année en BTS SIO SLAM</h4>
-                                <p class="text-gray-400">Lycée la châtaigneraie | 2025 - en cours</p>
-                                <p class="text-sm text-gray-500 mt-1">Spécialisation en Développement Web et Cloud Computing.</p>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold">2ème année en Génie Logiciel</h4>
-                                <p class="text-gray-400">Université ICAB | 2024 - 2025</p>
-                                <p class="text-sm text-gray-500 mt-1">Mention Bien.</p>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold">2ème année en BTS SIO SLAM</h4>
-                                <p class="text-gray-400">CNED | 2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Projets -->
-        <section id="projects" class="py-20 px-4">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Mes Projets</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Carte de Projet 1 -->
-                    <a href="#" class="block glass-card rounded-2xl p-6 relative group overflow-hidden">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Projet+1" alt="Image du Projet 1" class="rounded-xl mb-4 group-hover:scale-110 transition-transform duration-500">
-                        <h3 class="text-2xl font-bold mb-2">Projet 1</h3>
-                        <p class="text-gray-400 mb-4">Site de librairie en ligne. Technologies utilisées : HTML, CSS, JavaScript.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">HTML</span>
-                            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">CSS</span>
-                            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">JS</span>
-                            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">PHP</span>
-                        </div>
-                    </a>
-                    <!-- Carte de Projet 2 -->
-                    <a href="#" class="block glass-card rounded-2xl p-6 relative group overflow-hidden">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Projet+2" alt="Image du Projet 2" class="rounded-xl mb-4 group-hover:scale-110 transition-transform duration-500">
-                        <h3 class="text-2xl font-bold mb-2">Projet 2</h3>
-                        <p class="text-gray-400 mb-4">Développement d'un module de gestion d'hôtel. Technologies utilisées : Python, Odoo, PostegresSql.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">Python</span>
-                            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">Odoo</span>
-                            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">PostegresSql</span>
-                        </div>
-                    </a>
-                    <!-- Carte de Projet 3 -->
-                    <a href="#" class="block glass-card rounded-2xl p-6 relative group overflow-hidden">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Projet+3" alt="Image du Projet 3" class="rounded-xl mb-4 group-hover:scale-110 transition-transform duration-500">
-                        <h3 class="text-2xl font-bold mb-2">Projet 3</h3>
-                        <p class="text-gray-400 mb-4">Description courte du projet. Technologies utilisées : Python, Django, AWS.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">Python</span>
-                            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">Django</span>
-                            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">AWS</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Veille Technologique -->
-        <section id="veille" class="py-20 px-4">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Veille Technologique</h2>
-                <div class="glass-card rounded-2xl p-8">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold mb-4 text-center">
-                            <i class="fas fa-map-pin text-purple-500 mr-2"></i>
-                            Bornage
-                        </h3>
-                        <p class="text-gray-400 leading-relaxed text-center">
-                            Pour ma veille technologique j’ai choisi le thème de la robotique.  La robotique est l’ensemble des techniques permettant la conception et la réalisation de machines automatiques ou de robots. Il y a plusieurs types de robotique : la robotique spatiale, humanoïde, industrielle et même médical.Les aspect étudier sont les suivants :
-                        </p>
-                        <ul class="list-disc list-inside text-gray-400 mt-4 mx-auto max-w-lg space-y-2">
-                            <li>L'intelligence artificielle et son intégration dans la robotique.</li>
-                            <li>les différents types de robots.</li>
-                            <li>Les avantages et inconvénient des robos.</li>
-                            <li>Les danger de la robotique.</li>
-                        </ul>
-                    </div>
-                    <hr class="border-gray-700 my-8">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold mb-4 text-center">
-                            <i class="fas fa-tools text-yellow-500 mr-2"></i>
-                            Outils de Veille
-                        </h3>
-                        <ul class="list-disc list-inside text-gray-400 mt-4 mx-auto max-w-lg space-y-2">
-                            <li><b>Newsletters :</b> Je suis abonné à des newsletters spécialisées comme : "Robotics Weekly", "TechCrunch Robotics" et "AI & Robotics Digest".</li>
-                            <li><b>Réseaux sociaux :</b> J'utilise instagram et LinkedIn pour suivre des hashtags pertinents comme `#robot` et `#robotique`.</li>
-                            <li><b>Applications :</b> J'utilise:  "Google Alerte", "Pocket", "Feedly" et "Flipboard".</li>
-                            <li><b>Blogs et sites spécialisés :</b> Je consulte régulièrement:  "Robotics Business Review", "Robohub" et "RobotShop Blog".</li>
-                        </ul>
-                    </div>
-                    <hr class="border-gray-700 my-8">
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-4 text-center">
-                            <i class="fas fa-newspaper text-cyan-500 mr-2"></i>
-                            Articles de Veille
-                        </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <!-- Article 1 -->
-                            <div class="glass-card rounded-2xl p-4">
-                                <a href="#" target="_blank" class="block">
-                                    <img src="1.png" alt="Image de l'article sur l'IA générative" class="rounded-xl w-full mb-4">
-                                    <h4 class="text-xl font-bold mb-2">Robotique : définition, cas d'application et lois</h4>
-                                    <p class="text-gray-400 text-sm mb-4">Cet article relate des différentes questions que l’on peut se poser concernant ce thème tel que ce qu’est un robot, Quelle est l'origine du mot robot, les différents types de robot, les 3 grandes évolutions des robots ou encore les métiers lié a la robotique.</p>
-                                    <a href="https://www.journaldunet.fr/intelligence-artificielle/guide-de-l-intelligence-artificielle/1501853-robot/#:~:text=La%20robotique%20est%20un%20domaine,en%20%C3%A9lectronique%20et%20en%20m%C3%A9canique." class="text-blue-500 hover:underline font-bold">En savoir plus</a>
-                                </a>
-                            </div>
-                            <!-- Article 2 -->
-                            <div class="glass-card rounded-2xl p-4">
-                                <a href="#" target="_blank" class="block">
-                                    <img src="" alt="" class="rounded-xl w-full mb-4">
-                                    <h4 class="text-xl font-bold mb-2">les différents types de robots</h4>
-                                    <p class="text-gray-400 text-sm mb-4">Cette article explique les différèrent type de robots et les différentes catégories.</p>
-                                    <a href="https://www.robotique.tech/blog/quels-sont-les-differents-types-de-robots/" class="text-blue-500 hover:underline font-bold">En savoir plus</a>
-                                </a>
-                            </div>
-                            <!-- Article 3 -->
-                            <div class="glass-card rounded-2xl p-4">
-                                <a href="#" target="_blank" class="block">
-                                    <img src="" alt="" class="rounded-xl w-full mb-4">
-                                    <h4 class="text-xl font-bold mb-2">L'Edge Computing : Rapprocher la logique des utilisateurs</h4>
-                                    <p class="text-gray-400 text-sm mb-4">Explorez les avantages de l'architecture Edge Computing pour réduire la latence et améliorer les performances globales de vos applications.</p>
-                                    <span class="text-blue-400 hover:underline">Lire l'article →</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Fichiers Académiques -->
-        <section id="academic-files" class="py-20 px-4">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Fichiers Académiques</h2>
-                <div class="glass-card rounded-2xl p-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Fichier 1 -->
-                        <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
-                            <div class="text-red-500 text-4xl">
-                                <i class="fas fa-file-pdf"></i>
-                            </div>
-                            <div class="flex-grow">
-                                <h4 class="text-xl font-bold mb-1">Tableau de synthèse</h4>
-                                <p class="text-gray-400 text-sm mb-4"></p>
-                                <a href="Tableau synthese BTS SIO.xlsx" download class="text-blue-400 hover:underline font-semibold">
-                                    Télécharger (PDF) <i class="fas fa-download ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Fichier 2 -->
-                        <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
-                            <div class="text-blue-500 text-4xl">
-                                <i class="fas fa-file-pdf"></i>
-                            </div>
-                            <div class="flex-grow">
-                                <h4 class="text-xl font-bold mb-1">Attestation de stage 1ère année</h4>
-                                <a href="#" download class="text-blue-400 hover:underline font-semibold">
-                                    Télécharger (PDF) <i class="fas fa-download ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
-                            <div class="text-blue-500 text-4xl">
-                                <i class="fas fa-file-pdf"></i>
-                            </div>
-                            <div class="flex-grow">
-                                <h4 class="text-xl font-bold mb-1">Attestation de stage 2éme année</h4>
-                                <a href="#" download class="text-blue-400 hover:underline font-semibold">
-                                    Télécharger (PDF) <i class="fas fa-download ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Stages -->
-        <section id="internships" class="py-20 px-4">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Mes Stages</h2>
-                <div class="space-y-6">
-                    <!-- Stage 1ère année -->
-                    <div class="glass-card rounded-2xl">
-                        <button class="collapsible-header w-full text-left" onclick="toggleCollapse('stage1')">
-                            <span class="text-2xl font-semibold">Stage 1</span>
-                            <i id="icon-stage1" class="fas fa-chevron-down transform transition-transform"></i>
-                        </button>
-                        <div id="content-stage1" class="collapsible-content p-6">
-                            <div class="mb-8">
-                                <h3 class="text-2xl font-semibold mb-2">Présentation de l'entreprise</h3>
-                                <div class="flex items-center gap-6 mb-4">
-                                    <img src="SH_OK-1.png" alt="Logo de l'entreprise de stage" class="rounded-lg">
-                                    <p class="text-gray-400 leading-relaxed">
-                                        Durant ma première année, j'ai eu l'opportunité de faire un stage chez SHBusiness un cabinet de conseil spécialisé dans le CRM, la data analytics et le digital.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr class="border-gray-700 my-6">
-                            <h3 class="text-2xl font-semibold mb-4">Tâches effectuées</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <!-- Image 1 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+1.1" alt="Image de la tâche du stage de 1ère année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Analyse et traitement des fichier csv sur Excel</p>
-                                </div>
-                                <!-- Image 2 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+1.2" alt="Image de la tâche du stage de 1ère année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Intégration des fichier csv sur SQLServer.</p>
-                                </div>
-                                <!-- Image 3 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+1.3" alt="Image de la tâche du stage de 1ère année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Gestion de traitement des base de donnée.</p>
-                                </div>
-                                <!-- Image 4 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+1.4" alt="Image de la tâche du stage de 1ère année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Collaboration via trello sur l'interface web de l'entreprise.</p>
-                                </div>
-                                <!-- Image 5 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+1.5" alt="Image de la tâche du stage de 1ère année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Traitement de document office.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Stage 2ème année -->
-                    <div class="glass-card rounded-2xl">
-                        <button class="collapsible-header w-full text-left" onclick="toggleCollapse('stage2')">
-                            <span class="text-2xl font-semibold">Stage 2</span>
-                            <i id="icon-stage2" class="fas fa-chevron-down transform transition-transform"></i>
-                        </button>
-                        <div id="content-stage2" class="collapsible-content p-6">
-                            <div class="mb-8">
-                                <h3 class="text-2xl font-semibold mb-2">Présentation de l'entreprise</h3>
-                                <div class="flex items-center gap-6 mb-4">
-                                    <img src="téléchargement.png" alt="Logo de l'entreprise de stage" class="rounded-lg">
-                                    <p class="text-gray-400 leading-relaxed">
-                                        Mon second stage s'est déroulé au sein de LalaChante qui est un nouveau service de studio d’enregistrement professionnel dédié au Grand Public.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr class="border-gray-700 my-6">
-                            <h3 class="text-2xl font-semibold mb-4">Tâches effectuées</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <!-- Image 1 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+2.1" alt="Image de la tâche du stage de 2ème année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Reunion pour établir le cahier de charge</p>
-                                </div>
-                                <!-- Image 2 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+2.2" alt="Image de la tâche du stage de 2ème année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Modélisation et gestion d'une base de données Workbench.</p>
-                                </div>
-                                <!-- Image 3 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+2.3" alt="Image de la tâche du stage de 2ème année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Développement de l'application web grace aphp.</p>
-                                </div>
-                                <!-- Image 4 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+2.4" alt="Image de la tâche du stage de 2ème année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Participation au front end de l'application web.</p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Stage 3ème année -->
-                    <div class="glass-card rounded-2xl">
-                        <button class="collapsible-header w-full text-left" onclick="toggleCollapse('stage3')">
-                            <span class="text-2xl font-semibold">Stage 3</span>
-                            <i id="icon-stage3" class="fas fa-chevron-down transform transition-transform"></i>
-                        </button>
-                        <div id="content-stage3" class="collapsible-content p-6">
-                            <div class="mb-8">
-                                <h3 class="text-2xl font-semibold mb-2">Présentation de l'entreprise</h3>
-                                <div class="flex items-center gap-6 mb-4">
-                                    <a href="entreprise.html" > <img src="275216713_108147215152045_9165882150467106708_n.jpg"  alt="Logo de l'entreprise de stage" class="rounded-lg"> </a>
-                                    <p class="text-gray-400 leading-relaxed">
-                                        Mon stage de troisième année m'a plongé dans le monde des ERP au sein de Solutions House est un complexe composé d'une boulangerie-pâtisserie, d'une charcuterie, d'une supperette, d'une librairie et d'un restaurant.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr class="border-gray-700 my-6">
-                            <h3 class="text-2xl font-semibold mb-4">Tâches effectuées</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <!-- Image 1 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <h1 class="text-gray-400 text-sm">Cahier de charges</h1>
-                                    <img src="cahiercharges.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="cahiercharges1.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="cahiercharges2.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="cahiercharges4.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    
-                                </div>
-                                <!-- Image 2 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <h1 class="text-gray-400 text-sm">Mise en place de diagrammes et codages</h1>
-                                    <img src="trello.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="diagrame.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="diagrame2.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="chambre.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="client.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    
-                                </div>
-                                <!-- Image 3 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <h1 class="text-gray-400 text-sm">Développement et déploiement du module Odoo.</h1>
-                                    <img src="créer facture.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="Ajouter une réservation.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="ajout de repas.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="ajout client.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-                                    <img src="ajout chambre.png" alt="Image de la tâche du stage de 3ème année" class="rounded-lg mb-2 w-full">
-
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Stage 4ème année -->
-                    <div class="glass-card rounded-2xl">
-                        <button class="collapsible-header w-full text-left" onclick="toggleCollapse('stage4')">
-                            <span class="text-2xl font-semibold">Stage 4</span>
-                            <i id="icon-stage4" class="fas fa-chevron-down transform transition-transform"></i>
-                        </button>
-                        <div id="content-stage4" class="collapsible-content p-6">
-                            <div class="mb-8">
-                                <h3 class="text-2xl font-semibold mb-2">Présentation de l'entreprise</h3>
-                                <div class="flex items-center gap-6 mb-4">
-                                    <img src="téléchargement (6).png" alt="Logo de l'entreprise de stage" class="rounded-lg">
-                                    <p class="text-gray-400 leading-relaxed">
-                                        Mon stage de quatrième année a été au sein de l'institut ICAB ce stage était pricipalement observatoir.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr class="border-gray-700 my-6">
-                            <h3 class="text-2xl font-semibold mb-4">Tâches effectuées</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <!-- Image 1 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+4.1" alt="Image de la tâche du stage de 4ème année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Cahier de charges</p>
-                                </div>
-                                <!-- Image 2 -->
-                                <div class="glass-card rounded-xl p-4">
-                                    <img src="https://placehold.co/600x400/808080/fff?text=Tâche+4.2" alt="Image de la tâche du stage de 4ème année" class="rounded-lg mb-2 w-full">
-                                    <p class="text-gray-400 text-sm">Mise en place d'un site de librairie pour le campus</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="py-20 px-4">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Compétence acquises suite au stage</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Groupe Front-end -->
-                    <div class="glass-card rounded-2xl p-6">
-                        <h3 class="text-2xl font-semibold mb-4 text-center skill-group-title" data-skill-id="frontend">
-                            <i class="fas fa-desktop text-orange-500 mr-2"></i>
-                            Bloc de compétence
-                        </h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="html_css">Gérer les patrimoine Informatiques :  </span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-4">
-                                    Identifier les ressources numérique, Générer des sauvegardes
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="js_ts">Répondre aux incidents :  </span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-4">
-                                    Collecter, suivre et orienter les demandes
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="js_ts">Travailler en mode projet :  
-                                </span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-4">
-                                    Trello, Wetransfer
-                                </div>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="text-lg skill-link" data-skill-id="js_ts">Mettre a disposition un service informatique :  </span>
-                                <span class="text-sm font-light text-gray-400"></span>
-                                <div class="w-full ml-4">
-                                    Déployer un service, réalisation des test
-                                </div>
-                            </li>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span class="text-lg skill-link" data-skill-id="js_ts">Organiser son développement Professionnel :  </span>
-                            <span class="text-sm font-light text-gray-400"></span>
-                            <div class="w-full ml-4">
-                                réalisation d'un projet professionnel
-                            </div>
-                        </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>        
-
-        <!-- Section Centres d'Intérêt -->
-        <section id="interests" class="py-20 px-4">
-            <div class="container mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12">Centres d'intérêt</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <i class="fas fa-dumbbell text-4xl text-green-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Musculation</h3>
-                        <p class="text-sm text-gray-400">Passionné par le développement de la force et de l'endurance.</p>
-                    </div>
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <i class="fas fa-gamepad text-4xl text-blue-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Jeux Vidéo</h3>
-                        <p class="text-sm text-gray-400">Fan de jeux de stratégie et de jeux de rôle.</p>
-                    </div>
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <i class="fas fa-football-ball text-4xl text-red-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Football Américain</h3>
-                        <p class="text-sm text-gray-400">Pratiquant et fan de ce sport.</p>
-                    </div>
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <i class="fas fa-palette text-4xl text-yellow-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Dessin</h3>
-                        <p class="text-sm text-gray-400">Le dessin est un excellent moyen de développer sa créativité et son imagination.</p>
-                    </div>
-                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
-                        <i class="fas fa-headphones-alt text-4xl text-purple-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Musique</h3>
-                        <p class="text-sm text-gray-400">Écouter de la musique pour se motiver, se détendre ou simplement pour le plaisir.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Contact -->
-        <section id="contact" class="py-20 px-4">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Contact</h2>
-                <div class="glass-card rounded-2xl p-8 max-w-lg mx-auto text-center">
-                    <p class="text-lg text-gray-400 mb-6">N'hésitez pas à me contacter pour toute collaboration ou question.</p>
-                    <div class="flex justify-center gap-6">
-                        <a href="kamguiasiri@email.com" class="icon" aria-label="Envoyer un email"><i class="fas fa-envelope"></i></a>
-                        <a href="www.linkedin.com/in/siri-kamguia-82a977354" class="icon" target="_blank" aria-label="Profil LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- Page de détails de compétence (initialement cachée) -->
-    <div id="skill-details-page" class="skill-details-page">
-        <div class="container mx-auto p-8">
-            <button class="back-to-skills text-gray-400 hover:text-white transition-colors">
-                <i class="fas fa-arrow-left mr-2"></i>Retour aux compétences
-            </button>
-            <div id="skill-details-content" class="mt-8">
-                <!-- Le contenu des détails de la compétence sera injecté ici par JS -->
-            </div>
-        </div>
+  <!-- NAVIGATION -->
+  <nav class="sticky-nav py-4 px-4 shadow-xl">
+    <div class="container mx-auto flex flex-wrap justify-center gap-4 text-sm md:text-base font-medium">
+      <a href="#about" class="text-white hover:text-red-400 transition-colors">À propos</a>
+      <a href="#alternance" class="text-white hover:text-red-400 transition-colors">Alternance</a>
+      <a href="#skills" class="text-white hover:text-red-400 transition-colors">Compétences</a>
+      <a href="#projects" class="text-white hover:text-red-400 transition-colors">Projets</a>
+      <a href="#experience" class="text-white hover:text-red-400 transition-colors">Expérience</a>
+      <a href="#certifications" class="text-white hover:text-red-400 transition-colors">Certifications</a>
+      <a href="#internships" class="text-white hover:text-red-400 transition-colors">Stages</a>
+      <a href="#veille" class="text-white hover:text-red-400 transition-colors">Veille</a>
+      <a href="#academic-files" class="text-white hover:text-red-400 transition-colors">Fichiers</a>
+      <a href="#interests" class="text-white hover:text-red-400 transition-colors">Centres d’intérêt</a>
+      <a href="#contact" class="text-white hover:text-red-400 transition-colors">Contact</a>
     </div>
+  </nav>
 
-    <!-- Bouton de retour en haut de la page -->
-    <button id="scrollTopBtn" title="Remonter en haut">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+  <!-- HERO -->
+  <header class="header-content text-center py-20 px-4">
+    <div class="container mx-auto">
+      <p class="text-xs md:text-sm uppercase tracking-[0.2em] text-red-400 mb-3">
+        Alternance Développeur Web – Rentrée 2026
+      </p>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+        Kamguia Siri Jordan
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+        Développeur web junior (BTS SIO SLAM) spécialisé en PHP/Symfony, JavaScript
+        et Odoo. Je recherche une alternance pour mettre mes compétences back-end
+        et front-end au service de votre équipe.
+      </p>
 
-    <!-- Pied de page -->
-    <footer class="py-6 text-center text-gray-500 text-sm">
-        © 2024 Kamguia Siri Jordan. Tous droits réservés.
-    </footer>
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <a href="CV_Kamguia_Siri_Jordan.pdf" class="btn" target="_blank" rel="noopener">
+          <i class="fas fa-file-download"></i>
+          Télécharger mon CV
+        </a>
+        <a href="#contact"
+           class="px-6 py-3 rounded-full border border-red-500 text-red-400 hover:bg-red-500 hover:text-white transition flex items-center gap-2">
+          <i class="fas fa-envelope-open-text"></i>
+          Me contacter
+        </a>
+      </div>
 
-    <script>
-        // Data des compétences
-        const skillsData = {
-            html_css: {
-                title: 'HTML & CSS',
-                description: 'Maîtrise complète de HTML5 et CSS3 pour la création de structures de pages sémantiques et de designs responsifs et modernes.',
-                images: [
-                    'https://placehold.co/600x400/e34f26/ffffff?text=HTML5',
-                    'https://placehold.co/600x400/1572b6/ffffff?text=CSS3'
-                ]
-            },
-            js_ts: {
-                title: 'JavaScript & TypeScript',
-                description: 'Solide expérience en JavaScript ES6+ et TypeScript pour le développement d\'applications web dynamiques et maintenables.',
-                images: [
-                    'https://placehold.co/600x400/f7df1e/000000?text=JavaScript',
-                    'https://placehold.co/600x400/3178c6/ffffff?text=TypeScript'
-                ]
-            },
-            react: {
-                title: 'React',
-                description: 'Spécialisation dans la création d\'interfaces utilisateur avec React, en utilisant des hooks, le contexte et des composants fonctionnels pour une architecture moderne.',
-                images: [
-                    'https://placehold.co/600x400/61dafb/000000?text=React',
-                    'https://placehold.co/600x400/61dafb/000000?text=Components'
-                ]
-            },
-            nodejs: {
-                title: 'Node.js',
-                description: 'Construction de serveurs back-end et d\'API RESTful robustes et performantes avec Node.js.',
-                images: [
-                    'https://placehold.co/600x400/339933/ffffff?text=Node.js'
-                ]
-            },
-            java: {
-                title: 'Java',
-                description: 'Maîtrise de Java pour le développement d\'applications back-end d\'entreprise robustes et scalables, incluant les frameworks Spring Boot et Hibernate.',
-                images: [
-                    'https://placehold.co/600x400/f89820/ffffff?text=Java',
-                    'https://placehold.co/600x400/6db33f/ffffff?text=Spring+Boot'
-                ]
-            },
-            express: {
-                title: 'Express.js',
-                description: 'Développement d\'applications web et d\'API avec le framework Express.js pour une gestion efficace des routes et des requêtes.',
-                images: [
-                    'https://placehold.co/600x400/000000/ffffff?text=Express.js'
-                ]
-            },
-            postgresql: {
-                title: 'PostgreSQL',
-                description: 'Expertise dans la conception et l\'administration de bases de données relationnelles avec PostgreSQL, garantissant l\'intégrité et la haute disponibilité des données.',
-                images: [
-                    'https://placehold.co/600x400/336791/ffffff?text=PostgreSQL'
-                ]
-            },
-            sqlserver: {
-                title: 'SQL Server',
-                description: 'Solide connaissance de Microsoft SQL Server pour la gestion des bases de données d\'entreprise, l\'écriture de requêtes complexes et l\'optimisation des performances.',
-                images: [
-                    'https://placehold.co/600x400/cc2927/ffffff?text=SQL+Server'
-                ]
-            },
-            transactsql: {
-                title: 'Transact-SQL',
-                description: 'Maîtrise du langage de programmation Transact-SQL pour la création de procédures stockées, de fonctions et de déclencheurs pour les bases de données SQL Server.',
-                images: [
-                    'https://placehold.co/600x400/000000/ffffff?text=Transact-SQL'
-                ]
-            },
-            merise: {
-                title: 'Merise',
-                description: 'Utilisation de la méthode Merise pour la conception de systèmes d\'information, de l\'analyse des besoins à la modélisation des données et des traitements.',
-                images: [
-                    'https://placehold.co/600x400/007bff/ffffff?text=Merise'
-                ]
-            },
-            uml: {
-                title: 'UML',
-                description: 'Capacité à utiliser le langage UML pour la modélisation de la conception de logiciels et de systèmes, facilitant la communication et la compréhension des architectures.',
-                images: [
-                    'https://placehold.co/600x400/5e0030/ffffff?text=UML'
-                ]
-            },
-            symphony: {
-                title: 'Symphony',
-                description: 'Développement d\'applications web robustes et performantes avec le framework PHP Symfony, en suivant les meilleures pratiques et les principes de conception logicielle.',
-                images: [
-                    'https://placehold.co/600x400/000000/ffffff?text=Symfony'
-                ]
-            },
-            french: {
-                title: 'Français',
-                description: 'Le français est ma langue maternelle, me permettant de communiquer de manière fluide et de rédiger des documents clairs et précis.',
-                images: [
-                    'https://placehold.co/600x400/10B981/ffffff?text=Drapeau+français'
-                ]
-            },
-            english: {
-                title: 'Anglais',
-                description: 'Je parle anglais couramment (niveau C1). Cette compétence est essentielle pour collaborer avec des équipes internationales, lire la documentation technique et suivre les dernières tendances de l\'industrie.',
-                images: [
-                    'https://placehold.co/600x400/F59E0B/ffffff?text=Drapeau+anglais'
-                ]
-            },
-            arabic: {
-                title: 'Arabe',
-                description: 'L\'arabe est une langue que j\'apprends et que je maîtrise à un niveau de débutant (A2), ce qui me permet d\'avoir des conversations de base.',
-                images: [
-                    'https://placehold.co/600x400/EF4444/ffffff?text=Drapeau+arabe'
-                ]
-            },
-            // Descriptions génériques pour les groupes de compétences
-            frontend: {
-                title: 'Front-end',
-                description: 'Mes compétences en développement front-end me permettent de créer des interfaces utilisateur interactives et visuellement attrayantes. Je me concentre sur l\'expérience utilisateur et les performances pour offrir des applications modernes et efficaces.',
-                images: [
-                    'https://placehold.co/600x400/e53935/ffffff?text=Front-end'
-                ]
-            },
-            backend: {
-                title: 'Back-end',
-                description: 'Expertise dans la construction d\'architectures back-end robustes et scalables. Je suis compétent dans la création d\'API, la gestion de bases de données et la logique serveur pour alimenter les applications les plus exigeantes.',
-                images: [
-                    'https://placehold.co/600x400/f57c00/ffffff?text=Back-end'
-                ]
-            },
-            devops_db: {
-                title: 'DevOps & BDD',
-                description: 'Expérience approfondie en gestion de bases de données et en modélisation, avec une maîtrise de SQL et de méthodologies telles que Merise et UML pour garantir des systèmes d\'information robustes.',
-                images: [
-                    'https://placehold.co/600x400/43a047/ffffff?text=DevOps'
-                ]
-            },
-            languages: {
-                title: 'Langues',
-                description: 'Ma maîtrise de plusieurs langues est un atout précieux, facilitant la communication et la collaboration dans des environnements de travail diversifiés et internationaux.',
-                images: [
-                    'https://placehold.co/600x400/1976d2/ffffff?text=Langues'
-                ]
-            },
+      <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+        <span class="badge">BTS SIO SLAM</span>
+        <span class="badge">Développement Web</span>
+        <span class="badge">PHP / Symfony</span>
+        <span class="badge">Python / Odoo</span>
+        <span class="badge">PostgreSQL / SQL Server</span>
+      </div>
+    </div>
+  </header>
 
-            Soft: {
-                title: 'soft',
-                description: 'Ma maîtrise de plusieurs langues est un atout précieux, facilitant la communication et la collaboration dans des environnements de travail diversifiés et internationaux.',
-                images: [
-                    'https://placehold.co/600x400/1976d2/ffffff?text=Soft'
-                ]
-            }
-        };
+  <main>
+    <!-- A PROPOS -->
+    <section id="about" class="py-16 px-4">
+      <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="section-title text-left md:text-left">À propos de moi</h2>
+          <p class="text-lg text-gray-300 leading-relaxed mb-4">
+            Je suis Kamguia Siri Jordan, étudiant en deuxième année de
+            BTS SIO (option SLAM – Solutions Logicielles et Applications Métiers).
+            Passionné par le développement web, je souhaite rejoindre une équipe en alternance
+            pour participer à des projets concrets et monter en compétence sur les technologies
+            back-end et front-end.
+          </p>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            Mes expériences de stage m’ont permis de travailler sur des sites web,
+            des modules Odoo ERP et la conception de bases de données, dans des contextes
+            réels d’entreprise (librairie, studio d’enregistrement, gestion hôtelière).
+          </p>
+        </div>
 
-        // Définition des éléments
-        const skillLinks = document.querySelectorAll('.skill-link');
-        const skillGroupTitles = document.querySelectorAll('.skill-group-title');
-        const skillsSection = document.getElementById('skills');
-        const skillDetailsPage = document.getElementById('skill-details-page');
-        const skillDetailsContent = document.getElementById('skill-details-content');
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        <div class="relative w-full h-80 rounded-3xl overflow-hidden shadow-2xl glass-card flex items-center justify-center">
+          <!-- Remplace l’URL ci-dessous par ta photo pro en costume -->
+          <img
+            src="Snapchat-1090016969.png"
+            alt="Photo professionnelle de Kamguia Siri Jordan, développeur web junior"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
 
-        // Fonction pour afficher les détails d'une compétence
-        function showSkillDetails(skillId) {
-            const skill = skillsData[skillId];
-            if (!skill) return;
+    <!-- ALTERNANCE -->
+    <section id="alternance" class="py-16 px-4">
+      <div class="container mx-auto glass-card rounded-2xl p-8">
+        <h2 class="section-title">Ce que je recherche en alternance</h2>
+        <div class="grid md:grid-cols-2 gap-8 text-gray-300">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Objectif</h3>
+            <p class="mb-2">
+              Préparer un Bachelor / formation de niveau Bac+3 en
+              <span class="font-semibold">Conception et développement d’applications</span>
+              en alternance.
+            </p>
+            <p>
+              Contribuer au développement d’applications web (front et back),
+              à la conception de bases de données et à l’intégration d’API,
+              tout en respectant les bonnes pratiques (tests, documentation, Git).
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Modalités souhaitées</h3>
+            <ul class="list-disc list-inside space-y-2">
+              <li>Rentrée : <span class="font-semibold">septembre 2026</span>.</li>
+              <li>Rythme : <span class="font-semibold"> 3 semaines entreprise / 1 semaines école</span>.</li>
+              <li>Localisation : <span class="font-semibold">Normandie (Rouen )</span>
+                  avec possibilité de télétravail.</li>
+              <li>Domaines : développement web, back-end, full‑stack, ERP (Odoo).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            skillDetailsContent.innerHTML = `
-                <h3 class="text-3xl font-bold mb-4">${skill.title}</h3>
-                <p id="skill-description" class="text-lg text-gray-400 leading-relaxed mb-6">${skill.description}</p>
-                <div id="skill-gallery" class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-                    ${skill.images.map(src => `
-                        <img src="${src}" alt="Image de la compétence" class="skill-gallery-thumbnail w-full h-auto rounded-xl border-4 border-transparent hover:border-red-500">
-                    `).join('')}
+    <!-- COMPÉTENCES -->
+    <section id="skills" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="section-title">Mes compétences</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Front-end -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-center">
+              <i class="fas fa-desktop text-orange-500 mr-2"></i>Front-end
+            </h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex justify-between">
+                <span>HTML5 / CSS3</span>
+                <span class="text-orange-400 font-semibold">Expert</span>
+              </li>
+              <li class="flex justify-between">
+                <span>JavaScript</span>
+                <span class="text-orange-400 font-semibold">Compétent</span>
+              </li>
+              <li class="flex justify-between">
+                <span>TypeScript</span>
+                <span class="text-orange-400 font-semibold">Compétent</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Responsive design</span>
+                <span class="text-orange-400 font-semibold">Compétent</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Back-end -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-center">
+              <i class="fas fa-server text-blue-500 mr-2"></i>Back-end
+            </h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex justify-between">
+                <span>PHP / Symfony</span>
+                <span class="text-blue-400 font-semibold">Compétent</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Python (Odoo, scripts)</span>
+                <span class="text-blue-400 font-semibold">Compétent</span>
+              </li>
+              <li class="flex justify-between">
+                <span>C# / .NET</span>
+                <span class="text-blue-400 font-semibold">Débutant</span>
+              </li>
+              <li class="flex justify-between">
+                <span>APIs REST, JSON</span>
+                <span class="text-blue-400 font-semibold">Compétent</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- BDD & Outils -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-center">
+              <i class="fas fa-database text-green-500 mr-2"></i>BDD & Outils
+            </h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex justify-between">
+                <span>PostgreSQL</span>
+                <span class="text-green-400 font-semibold">Compétent</span>
+              </li>
+              <li class="flex justify-between">
+                <span>SQL Server / Transact‑SQL</span>
+                <span class="text-green-400 font-semibold">Compétent</span>
+              </li>
+              <li class="flex justify-between">
+                <span>MySQL</span>
+                <span class="text-green-400 font-semibold">Compétent</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Merise / UML</span>
+                <span class="text-green-400 font-semibold">Confirmé</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Git / GitHub, Trello</span>
+                <span class="text-green-400 font-semibold">Compétent</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Odoo ERP</span>
+                <span class="text-green-400 font-semibold">Compétent</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Soft skills & Langues -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-center">
+              <i class="fas fa-users text-purple-500 mr-2"></i>Soft skills & langues
+            </h3>
+            <ul class="space-y-2 text-sm mb-4">
+              <li>Communication claire avec l’équipe et les utilisateurs.</li>
+              <li>Esprit d’équipe, collaboration et autonomie.</li>
+              <li>Adaptabilité, curiosité et prise d’initiative.</li>
+              <li>Créativité et rigueur dans la qualité du code.</li>
+            </ul>
+            <div class="border-t border-gray-700 pt-3 text-sm">
+              <p><span class="font-semibold">Français :</span> langue maternelle</p>
+              <p><span class="font-semibold">Anglais :</span> niveau opérationnel</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projects" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="section-title">Mes projets</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Projet 1 -->
+          <article class="glass-card rounded-2xl p-6 relative overflow-hidden">
+            <img
+              src="images/projet-librairie.jpg"
+              alt="Interface du site de librairie en ligne"
+              class="rounded-xl mb-4 w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <h3 class="text-2xl font-bold mb-2">Site de librairie en ligne</h3>
+            <p class="text-gray-300 text-sm mb-4">
+              Création d’un site vitrine pour une librairie, avec gestion des livres,
+              catégories et panier simplifié.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs mb-3">
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+              <span class="badge">JavaScript</span>
+            </div>
+            <!-- Lien GitHub à adapter -->
+            <a href="https://github.com/toncompte/projet-librairie"
+               target="_blank" rel="noopener"
+               class="text-red-400 hover:underline text-sm">
+              Voir le code
+            </a>
+          </article>
+
+          <!-- Projet 2 -->
+          <article class="glass-card rounded-2xl p-6 relative overflow-hidden">
+            <img
+              src="images/projet-odoo-hotel.jpg"
+              alt="Module Odoo de gestion hôtelière"
+              class="rounded-xl mb-4 w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <h3 class="text-2xl font-bold mb-2">Module Odoo de gestion hôtelière</h3>
+            <p class="text-gray-300 text-sm mb-4">
+              Développement d’un module Odoo pour gérer chambres, repas, réservations
+              et factures au sein d’un complexe hôtelier.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs mb-3">
+              <span class="badge">Python</span>
+              <span class="badge">Odoo</span>
+              <span class="badge">PostgreSQL</span>
+            </div>
+            <a href="https://github.com/toncompte/odoo-hotel-module"
+               target="_blank" rel="noopener"
+               class="text-red-400 hover:underline text-sm">
+              Voir le code
+            </a>
+          </article>
+
+          <!-- Projet 3 -->
+          <article class="glass-card rounded-2xl p-6 relative overflow-hidden">
+            <img
+              src="images/projet-backend.jpg"
+              alt="Application web de réservation"
+              class="rounded-xl mb-4 w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <h3 class="text-2xl font-bold mb-2">Application de réservation</h3>
+            <p class="text-gray-300 text-sm mb-4">
+              Application web de réservation (studio / salle) avec authentification,
+              gestion des créneaux et tableau de bord administrateur.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs mb-3">
+              <span class="badge">PHP</span>
+              <span class="badge">Symfony</span>
+              <span class="badge">MySQL</span>
+            </div>
+            <a href="https://github.com/toncompte/app-reservation"
+               target="_blank" rel="noopener"
+               class="text-red-400 hover:underline text-sm">
+              Voir le code
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPÉRIENCE & ÉDUCATION -->
+    <section id="experience" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="section-title">Expérience & éducation</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Expérience -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-center">
+              <i class="fas fa-briefcase text-red-500 mr-2"></i>Expérience professionnelle
+            </h3>
+            <div class="space-y-6 text-sm text-gray-300">
+              <div>
+                <h4 class="text-lg font-bold">Stagiaire Développeur Web – ICAB (2024)</h4>
+                <ul class="list-disc list-inside">
+                  <li>Développement front-end d’un site de librairie.</li>
+                  <li>Intégration d’interfaces responsives en HTML, CSS, JavaScript.</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold">Stagiaire Développeur Python – Solutions House (2023)</h4>
+                <ul class="list-disc list-inside">
+                  <li>Développement d’un module Odoo ERP pour un complexe hôtelier.</li>
+                  <li>Conception et gestion de bases de données PostgreSQL.</li>
+                  <li>Travail en mode projet (cahier des charges, tests).</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold">Stagiaire Développeur back-end – LalaChante (2022)</h4>
+                <ul class="list-disc list-inside">
+                  <li>Développement d’une application web pour un studio d’enregistrement.</li>
+                  <li>Modélisation de la base de données via Workbench.</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold">Stagiaire Gestion de base de données – SH Business (2021)</h4>
+                <ul class="list-disc list-inside">
+                  <li>Gestion de bases SQL Server.</li>
+                  <li>Traitement de fichiers Excel et intégration en base.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Éducation -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-center">
+              <i class="fas fa-graduation-cap text-green-500 mr-2"></i>Éducation
+            </h3>
+            <div class="space-y-6 text-sm text-gray-300">
+              <div>
+                <h4 class="text-lg font-bold">BTS SIO SLAM – Lycée La Châtaigneraie</h4>
+                <p class="text-gray-400">2025 – en cours</p>
+                <p>Spécialisation en développement web et cloud computing.</p>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold">2ᵉ année Génie Logiciel – Université ICAB</h4>
+                <p class="text-gray-400">2024 – 2025</p>
+                <p>Mention Bien.</p>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold">BTS SIO SLAM – CNED</h4>
+                <p class="text-gray-400">2022</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+        <!-- CERTIFICATIONS -->
+        <section id="certifications" class="py-16 px-4">
+            <div class="container mx-auto">
+              <h2 class="section-title">Mes certifications</h2>
+      
+              <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      
+                <!-- ANSSI SecNumAcadémie -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+                  <h3 class="text-lg font-semibold mb-3 text-center">
+                    Certification ANSSI – SecNumAcadémie
+                  </h3>
+                  <a href="attestation_secnumacademie-1-1.pdf" download class="block w-full">
+                    <img
+                      src="images/certif-anssi.png"
+                      alt="Certification ANSSI SecNumAcadémie"
+                      class="w-full h-auto rounded-xl shadow-md hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </a>
+                  <p class="text-xs text-gray-400 mt-3 text-center">
+                    Sensibilisation à la cybersécurité (SecNumAcadémie).
+                  </p>
                 </div>
-            `;
-            
-            // Sélectionner la première miniature par défaut
-            const gallery = document.getElementById('skill-gallery');
-            if (gallery.children.length > 0) {
-                gallery.children[0].classList.add('border-red-500');
-            }
+      
+                <!-- JavaScript – certification 1 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+                  <h3 class="text-lg font-semibold mb-3 text-center">
+                    Certification JavaScript
+                  </h3>
+                  <a href="7078047256.pdf" download class="block w-full">
+                    <img
+                      src="images/certif-js-1.png"
+                      alt="Certification JavaScript"
+                      class="w-full h-auto rounded-xl shadow-md hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </a>
+                  <p class="text-xs text-gray-400 mt-3 text-center">
+                    Bases du langage JavaScript et de la programmation web.
+                  </p>
+                </div>
+      
+                <!-- JavaScript – certification 2 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+                  <h3 class="text-lg font-semibold mb-3 text-center">
+                    Certification JavaScript avancé
+                  </h3>
+                  <a href="9610848796.pdf" download class="block w-full">
+                    <img
+                      src="images/certif-js-2.png"
+                      alt="Certification JavaScript avancé"
+                      class="w-full h-auto rounded-xl shadow-md hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </a>
+                  <p class="text-xs text-gray-400 mt-3 text-center">
+                    Approfondissement des concepts JavaScript modernes.
+                  </p>
+                </div>
+      
+                <!-- Python -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+                  <h3 class="text-lg font-semibold mb-3 text-center">
+                    Certification Python
+                  </h3>
+                  <a href="3344484850.pdf" download class="block w-full">
+                    <img
+                      src="images/certif-python.png"
+                      alt="Certification Python"
+                      class="w-full h-auto rounded-xl shadow-md hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </a>
+                  <p class="text-xs text-gray-400 mt-3 text-center">
+                    Programmation Python et automatisation de scripts.
+                  </p>
+                </div>
+      
+                <!-- PHP -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+                  <h3 class="text-lg font-semibold mb-3 text-center">
+                    Certification PHP
+                  </h3>
+                  <a href="3680999701.pdf" download class="block w-full">
+                    <img
+                      src="images/certif-php.png"
+                      alt="Certification PHP"
+                      class="w-full h-auto rounded-xl shadow-md hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </a>
+                  <p class="text-xs text-gray-400 mt-3 text-center">
+                    Développement back-end en PHP pour le web.
+                  </p>
+                </div>
+      
+                <!-- Gestion de base de données -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+                  <h3 class="text-lg font-semibold mb-3 text-center">
+                    Certification gestion de bases de données
+                  </h3>
+                  <a href="2163064859.pdf" download class="block w-full">
+                    <img
+                      src="images/certif-bdd.png"
+                      alt="Certification gestion de bases de données"
+                      class="w-full h-auto rounded-xl shadow-md hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </a>
+                  <p class="text-xs text-gray-400 mt-3 text-center">
+                    Modélisation, requêtes SQL et administration de bases.
+                  </p>
+                </div>
+      
+                <!-- Mise en place environnement Python -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+                  <h3 class="text-lg font-semibold mb-3 text-center">
+                    Mise en place d’un environnement Python
+                  </h3>
+                  <a href="3344484850.pdf" download class="block w-full">
+                    <img
+                      src="images/certif-env-python.png"
+                      alt="Certification mise en place d'un environnement Python"
+                      class="w-full h-auto rounded-xl shadow-md hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </a>
+                  <p class="text-xs text-gray-400 mt-3 text-center">
+                    Installation, configuration et utilisation d’outils Python.
+                  </p>
+                </div>
+      
+                <!-- Angular -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+                  <h3 class="text-lg font-semibold mb-3 text-center">
+                    Développement web avec Angular
+                  </h3>
+                  <a href="certif-ANGULAR.pdf" download class="block w-full">
+                    <img
+                      src="images/certif-angular.png"
+                      alt="Certification développement web avec Angular"
+                      class="w-full h-auto rounded-xl shadow-md hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </a>
+                  <p class="text-xs text-gray-400 mt-3 text-center">
+                    Bases du framework Angular pour des SPA modernes.
+                  </p>
+                </div>
+      
+              </div>
+            </div>
+          </section>
 
-            // Écouter les clics sur les miniatures pour l'effet de bordure
-            gallery.querySelectorAll('.skill-gallery-thumbnail').forEach(thumbnail => {
-                thumbnail.addEventListener('click', () => {
-                    gallery.querySelectorAll('.skill-gallery-thumbnail').forEach(t => t.classList.remove('border-red-500'));
-                    thumbnail.classList.add('border-red-500');
-                });
-            });
+       <!-- STAGES (vue détaillée) -->
+       <section id="internships" class="py-16 px-4">
+        <div class="container mx-auto">
+          <h2 class="section-title">Mes stages</h2>
+  
+          <div class="space-y-6">
+            <!-- Stage Easilife Cameroun -->
+            <details class="glass-card rounded-2xl">
+              <summary class="cursor-pointer px-6 py-4 flex justify-between items-center">
+                <span class="text-xl font-semibold">
+                  Easilife Cameroun – Développeur web (avril 2024 → juin 2024)
+                </span>
+                <i class="fas fa-chevron-down text-gray-400"></i>
+              </summary>
+              <div class="px-6 pb-6 text-sm text-gray-300">
+                <p class="mb-3">
+                  Easilife Cameroun est une structure orientée services numériques (applications web
+                  et solutions digitales) pour le marché local.
+                </p>
+                <h4 class="font-semibold mb-2">Tâches principales</h4>
+                <ul class="list-disc list-inside space-y-1">
+                  <li>Participation au développement et à la maintenance d’applications web.</li>
+                  <li>Intégration d’interfaces responsives (HTML, CSS, JavaScript).</li>
+                  <li>Implémentation de fonctionnalités back-end (PHP / API).</li>
+                  <li>Utilisation de Git pour le versioning et le travail en équipe.</li>
+                </ul>
+                <p class="mt-3">
+                  <a href="easilife.html" class="text-blue-400 hover:underline" target="_blank" rel="noopener">
+                    En savoir plus sur l’entreprise Easilife Cameroun
+                  </a>
+                </p>
+              </div>
+            </details>
+  
+            <!-- Stage Smartdiso -->
+            <details class="glass-card rounded-2xl">
+              <summary class="cursor-pointer px-6 py-4 flex justify-between items-center">
+                <span class="text-xl font-semibold">
+                  Smartdiso – Développeur web / intégrateur (décembre 2023 → avril 2024)
+                </span>
+                <i class="fas fa-chevron-down text-gray-400"></i>
+              </summary>
+              <div class="px-6 pb-6 text-sm text-gray-300">
+                <p class="mb-3">
+                  Smartdiso est une société spécialisée dans les solutions digitales (sites vitrines,
+                  e‑commerce, outils métiers) pour PME et associations.
+                </p>
+                <h4 class="font-semibold mb-2">Tâches principales</h4>
+                <ul class="list-disc list-inside space-y-1">
+                  <li>Intégration de maquettes en HTML/CSS à partir de designs (Figma ou équivalent).</li>
+                  <li>Ajout de fonctionnalités dynamiques en JavaScript.</li>
+                  <li>Participation à l’optimisation des performances et de l’accessibilité.</li>
+                  <li>Contribution à la rédaction de documentation technique.</li>
+                </ul>
+                <p class="mt-3">
+                  <a href="smartdiso.html" class="text-blue-400 hover:underline" target="_blank" rel="noopener">
+                    En savoir plus sur l’entreprise Smartdiso
+                  </a>
+                </p>
+              </div>
+            </details>
+  
+            <!-- Stage InnovQube Paris -->
+            <details class="glass-card rounded-2xl">
+              <summary class="cursor-pointer px-6 py-4 flex justify-between items-center">
+                <span class="text-xl font-semibold">
+                  InnovQube Paris – Développeur web (janvier 2026 → mars 2026)
+                </span>
+                <i class="fas fa-chevron-down text-gray-400"></i>
+              </summary>
+              <div class="px-6 pb-6 text-sm text-gray-300">
+                <p class="mb-3">
+                  InnovQube est une structure parisienne axée sur l’innovation web et les
+                  applications SaaS pour les entreprises.
+                </p>
+                <h4 class="font-semibold mb-2">Tâches principales</h4>
+                <ul class="list-disc list-inside space-y-1">
+                  <li>Participation au développement d’une application web (front & back).</li>
+                  <li>Implémentation de composants réutilisables (JavaScript / framework).</li>
+                  <li>Création et consommation d’API REST.</li>
+                  <li>Travail en mode agile (sprints, revues de code).</li>
+                </ul>
+                <p class="mt-3">
+                  <a href="innovqube.html" class="text-blue-400 hover:underline" target="_blank" rel="noopener">
+                    En savoir plus sur l’entreprise InnovQube
+                  </a>
+                </p>
+              </div>
+            </details>
+  
+            <!-- Stage SH Business -->
+            <details class="glass-card rounded-2xl">
+              <summary class="cursor-pointer px-6 py-4 flex justify-between items-center">
+                <span class="text-xl font-semibold">
+                  SH Business – Gestion de base de données (2021)
+                </span>
+                <i class="fas fa-chevron-down text-gray-400"></i>
+              </summary>
+              <div class="px-6 pb-6 text-sm text-gray-300">
+                <p class="mb-3">
+                  Cabinet de conseil spécialisé dans le CRM, la data analytics et le digital.
+                </p>
+                <h4 class="font-semibold mb-2">Tâches principales</h4>
+                <ul class="list-disc list-inside space-y-1">
+                  <li>Analyse et traitement de fichiers CSV sur Excel.</li>
+                  <li>Intégration des données dans SQL Server.</li>
+                  <li>Gestion des bases et contrôle de cohérence.</li>
+                  <li>Collaboration via Trello sur les tâches internes.</li>
+                </ul>
+                <p class="mt-3">
+                    <a href="SHBusiness.html" class="text-blue-400 hover:underline" target="_blank" rel="noopener">
+                      En savoir plus sur l’entreprise SH Business
+                    </a>
+                  </p>
+              </div>
+            </details>
+  
+            <!-- Stage LalaChante -->
+            <details class="glass-card rounded-2xl">
+              <summary class="cursor-pointer px-6 py-4 flex justify-between items-center">
+                <span class="text-xl font-semibold">
+                  LalaChante – Développeur web (2022)
+                </span>
+                <i class="fas fa-chevron-down text-gray-400"></i>
+              </summary>
+              <div class="px-6 pb-6 text-sm text-gray-300">
+                <p class="mb-3">
+                  Studio d’enregistrement professionnel dédié au grand public.
+                </p>
+                <h4 class="font-semibold mb-2">Tâches principales</h4>
+                <ul class="list-disc list-inside space-y-1">
+                  <li>Participation à la rédaction du cahier des charges.</li>
+                  <li>Modélisation de la base de données avec MySQL Workbench.</li>
+                  <li>Développement de l’application web (PHP, HTML, CSS).</li>
+                  <li>Participation au front-end et aux tests.</li>
+                </ul>
+                <p class="mt-3">
+                    <a href="lalachante.html" class="text-blue-400 hover:underline" target="_blank" rel="noopener">
+                      En savoir plus sur l’entreprise LalaChante
+                    </a>
+                  </p>
+              </div>
+            </details>
+  
+            <!-- Stage Solutions House -->
+            <details class="glass-card rounded-2xl" id="stage-solutions-house">
+              <summary class="cursor-pointer px-6 py-4 flex justify-between items-center">
+                <span class="text-xl font-semibold">
+                  Solutions House – Odoo / gestion hôtelière (2023)
+                </span>
+                <i class="fas fa-chevron-down text-gray-400"></i>
+              </summary>
+              <div class="px-6 pb-6 text-sm text-gray-300">
+                <p class="mb-3">
+                  Complexe comprenant boulangerie‑pâtisserie, supérette, librairie et restaurant,
+                  utilisant Odoo ERP pour la gestion.
+                </p>
+                <h4 class="font-semibold mb-2">Tâches principales</h4>
+                <ul class="list-disc list-inside space-y-1">
+                  <li>Analyse du cahier des charges et modélisation UML / Merise.</li>
+                  <li>Conception de diagrammes (cas d’utilisation, séquence, classes).</li>
+                  <li>Développement d’un module Odoo de gestion hôtelière (chambres, repas, réservations, factures).</li>
+                  <li>Conception et optimisation de la base PostgreSQL.</li>
+                  <li>Tests fonctionnels et déploiement.</li>
+                </ul>
+                <p class="mt-3">
+                  <a href="entreprise.html" class="text-blue-400 hover:underline" target="_blank" rel="noopener">
+                    En savoir plus sur l’entreprise Solutions House
+                  </a>
+                </p>
+              </div>
+            </details>
+  
+            <!-- Stage ICAB -->
+            <details class="glass-card rounded-2xl">
+              <summary class="cursor-pointer px-6 py-4 flex justify-between items-center">
+                <span class="text-xl font-semibold">
+                  Institut ICAB – Support & observation (2024)
+                </span>
+                <i class="fas fa-chevron-down text-gray-400"></i>
+              </summary>
+              <div class="px-6 pb-6 text-sm text-gray-300">
+                <p class="mb-3">
+                  Stage d’observation axé sur la compréhension des besoins numériques du campus.
+                </p>
+                <h4 class="font-semibold mb-2">Tâches principales</h4>
+                <ul class="list-disc list-inside space-y-1">
+                  <li>Participation au cahier des charges d’un site de librairie interne.</li>
+                  <li>Observation des processus de gestion de l’information.</li>
+                </ul>
+                <p class="mt-3">
+                    <a href="icab.html" class="text-blue-400 hover:underline" target="_blank" rel="noopener">
+                      En savoir plus sur l’entreprise InnovQube
+                    </a>
+                  </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
 
-            // Afficher la page de détails et cacher le tableau des compétences
-            skillsSection.style.display = 'none';
-            skillDetailsPage.classList.add('show');
-            skillDetailsPage.scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        // Écouter les clics sur les liens des compétences
-        skillLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                showSkillDetails(e.currentTarget.dataset.skillId);
-            });
-        });
+    <!-- COMPÉTENCES ACQUISES (BLOCS BTS) -->
+    <section id="skills-blocks" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="section-title">Compétences BTS mises en œuvre</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm text-gray-300">
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Gérer le patrimoine informatique</h3>
+            <p>Identifier les ressources numériques, gérer les versions et assurer les sauvegardes.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Répondre aux incidents</h3>
+            <p>Collecter, suivre et orienter les demandes utilisateurs, participer à la résolution.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Travailler en mode projet</h3>
+            <p>Utilisation de Trello, gestion des tâches, réalisation de comptes rendus et livrables.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Mettre à disposition un service</h3>
+            <p>Déploiement de services, paramétrage d’applications, réalisation de tests.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Organiser son développement professionnel</h3>
+            <p>Construction d’un projet professionnel et veille sur les technologies du web.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Écouter les clics sur les titres des groupes de compétences
-        skillGroupTitles.forEach(title => {
-            title.addEventListener('click', (e) => {
-                e.preventDefault();
-                showSkillDetails(e.currentTarget.dataset.skillId);
-            });
-        });
+    <!-- VEILLE TECHNOLOGIQUE -->
+    <section id="veille" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="section-title">Veille technologique</h2>
 
-        // Écouter le clic sur le bouton de retour
-        const backToSkillsButton = document.querySelector('.back-to-skills');
-        backToSkillsButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            skillDetailsPage.classList.remove('show');
-            skillsSection.style.display = 'block';
-            skillsSection.scrollIntoView({ behavior: 'smooth' });
-        });
+        <div class="glass-card rounded-2xl p-8 mb-10">
+          <h3 class="text-2xl font-semibold mb-4 text-center">
+            <i class="fas fa-robot text-purple-500 mr-2"></i>Thème : Robotique et IA
+          </h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Pour ma veille technologique, j’ai choisi le thème de la robotique.
+            La robotique regroupe les techniques permettant la conception et la réalisation
+            de machines automatiques ou de robots, qu’ils soient industriels, humanoïdes,
+            médicaux ou spatiaux.
+          </p>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Je m’intéresse en particulier à l’intégration de l’intelligence artificielle
+            dans les robots, aux différents types de robots, à leurs avantages et limites,
+            ainsi qu’aux enjeux éthiques et sécuritaires.
+          </p>
+          <h4 class="font-semibold mb-2">Axes étudiés :</h4>
+          <ul class="list-disc list-inside text-gray-300">
+            <li>Intégration de l’IA dans la robotique.</li>
+            <li>Types et catégories de robots.</li>
+            <li>Avantages et risques de la robotisation.</li>
+          </ul>
+        </div>
 
-        // Fonction pour gérer les sections repliables
-        function toggleCollapse(contentId) {
-            const content = document.getElementById(`content-${contentId}`);
-            const icon = document.getElementById(`icon-${contentId}`);
-            
-            // Fermer toutes les autres sections
-            document.querySelectorAll('.collapsible-content').forEach(c => {
-                if (c.id !== content.id) {
-                    c.classList.remove('expanded');
-                    document.getElementById(`icon-${c.id.split('-')[1]}`).classList.remove('rotate-180');
-                }
-            });
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+          <div class="glass-card rounded-2xl p-6">
+            <h4 class="text-xl font-semibold mb-3">Outils de veille</h4>
+            <ul class="list-disc list-inside space-y-2 text-gray-300">
+              <li>
+                <span class="font-semibold">Newsletters :</span>
+                Robotics Weekly, TechCrunch Robotics, AI & Robotics Digest.
+              </li>
+              <li>
+                <span class="font-semibold">Réseaux sociaux :</span>
+                Instagram et LinkedIn (hashtags #robot, #robotique).
+              </li>
+              <li>
+                <span class="font-semibold">Applications :</span>
+                Google Alerte, Pocket, Feedly, Flipboard.
+              </li>
+              <li>
+                <span class="font-semibold">Sites spécialisés :</span>
+                Robotics Business Review, Robohub, RobotShop Blog.
+              </li>
+            </ul>
+          </div>
 
-            // Basculer la section actuelle
-            content.classList.toggle('expanded');
-            icon.classList.toggle('rotate-180');
-        }
+          <div class="glass-card rounded-2xl p-6">
+            <h4 class="text-xl font-semibold mb-3">Articles suivis</h4>
+            <ul class="list-disc list-inside space-y-3 text-gray-300">
+              <li>
+                <span class="font-semibold">Robotique : définition, cas d’application et lois</span> –
+                article présentant les définitions, types de robots, grandes évolutions
+                et métiers liés à la robotique.
+              </li>
+              <li>
+                <span class="font-semibold">Les différents types de robots</span> –
+                classification des robots (domestiques, industriels, médicaux, etc.).
+              </li>
+              <li>
+                Articles complémentaires sur la sécurité et la réglementation autour des robots.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Logique du bouton de retour en haut
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollTopBtn.classList.add('show');
-            } else {
-                scrollTopBtn.classList.remove('show');
-            }
-        });
+    <!-- FICHIERS ACADÉMIQUES -->
+    <section id="academic-files" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="section-title">Fichiers académiques</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+            <div class="text-red-500 text-4xl">
+              <i class="fas fa-file-pdf"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Tableau de synthèse BTS SIO</h3>
+              <a href="Tableau_synthese_BTS_SIO.xlsx" download
+                 class="text-blue-400 hover:underline text-sm">
+                Télécharger
+              </a>
+            </div>
+          </div>
 
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+          <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+            <div class="text-blue-500 text-4xl">
+              <i class="fas fa-file-pdf"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Attestation de stage 1ᵉ année</h3>
+              <a href="attestation_stage1.pdf" download
+                 class="text-blue-400 hover:underline text-sm">
+                Télécharger
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+            <div class="text-blue-500 text-4xl">
+              <i class="fas fa-file-pdf"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Attestation de stage 2ᵉ année</h3>
+              <a href="attestation_stage2.pdf" download
+                 class="text-blue-400 hover:underline text-sm">
+                Télécharger
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CENTRES D’INTÉRÊT -->
+    <section id="interests" class="py-16 px-4">
+      <div class="container mx-auto text-center">
+        <h2 class="section-title">Centres d’intérêt</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-dumbbell text-4xl text-green-400 mb-4"></i>
+            <h3 class="text-lg font-semibold mb-2">Musculation</h3>
+            <p class="text-gray-300">
+              Développement de la force, de l’endurance et de la discipline.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-gamepad text-4xl text-blue-400 mb-4"></i>
+            <h3 class="text-lg font-semibold mb-2">Jeux vidéo</h3>
+            <p class="text-gray-300">
+              Jeux de stratégie et de rôle, esprit d’analyse et travail en équipe.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-football-ball text-4xl text-red-400 mb-4"></i>
+            <h3 class="text-lg font-semibold mb-2">Football américain</h3>
+            <p class="text-gray-300">
+              Pratique sportive, esprit d’équipe et persévérance.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-palette text-4xl text-yellow-400 mb-4"></i>
+            <h3 class="text-lg font-semibold mb-2">Dessin</h3>
+            <p class="text-gray-300">
+              Développement de la créativité et du sens du détail.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-headphones-alt text-4xl text-purple-400 mb-4"></i>
+            <h3 class="text-lg font-semibold mb-2">Musique</h3>
+            <p class="text-gray-300">
+              Écoute pour se motiver, se concentrer ou se détendre.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="section-title">Contact</h2>
+        <div class="glass-card rounded-2xl p-8 max-w-lg mx-auto text-center">
+          <p class="text-lg text-gray-300 mb-6">
+            N’hésitez pas à me contacter pour une opportunité d’alternance ou toute
+            autre collaboration en développement web.
+          </p>
+          <div class="flex justify-center gap-6 mb-4">
+            <a href="mailto:kamguiasiri@email.com"
+               class="icon" aria-label="Envoyer un email">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://https://https://linkedin.com/in/siri-kamguia"
+               class="icon" target="_blank" rel="noopener"
+               aria-label="Profil LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <!-- Ajoute ici ton GitHub si tu veux -->
+            <a href="https://github.com/jojo76300"
+               class="icon" target="_blank" rel="noopener"
+               aria-label="Profil GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <p class="text-sm text-gray-400">
+            Basé à Rouen (Normandie) – mobilité possible sur Rouen et Paris.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- BOUTON RETOUR HAUT -->
+  <button id="scrollTopBtn" title="Remonter en haut">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- PIED DE PAGE -->
+  <footer class="py-6 text-center text-gray-500 text-xs border-t border-gray-800">
+    © 2024–2026 Kamguia Siri Jordan. Tous droits réservés.
+  </footer>
+
+  <!-- JavaScript minimal -->
+  <script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        scrollBtn.classList.add("show");
+      } else {
+        scrollBtn.classList.remove("show");
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>

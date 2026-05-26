@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easylife Cameroun – Présentation de l'entreprise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #e53935; /* Rouge */
+      --secondary-color: #f57c00; /* Orange */
+      --tertiary-color: #43a047; /* Vert */
+      --quaternary-color: #1976d2; /* Bleu */
+      --background-color: #1a1a1a;
+      --text-color: #f1f1f1;
+      --secondary-text-color: #b0b0b0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1200px;
+    }
+    .header-content {
+      background-color: #111827;
+      background-size: cover;
+      background-position: center;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-5px);
+    }
+    .team-member-card {
+      transition: transform 0.3s ease;
+    }
+    .team-member-card:hover {
+      transform: scale(1.05);
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(10px);
+      background-color: rgba(26, 26, 26, 0.8);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+  <!-- Menu de navigation fixe -->
+  <nav class="sticky-nav py-4 px-4 shadow-xl">
+    <div class="container mx-auto flex justify-center space-x-6 text-sm md:text-base font-medium">
+      <a href="index.html#internships" class="text-white hover:text-red-400 transition-colors">
+        Retour au portfolio
+      </a>
+      <a href="#about-us" class="text-white hover:text-red-400 transition-colors">À propos</a>
+      <a href="#services" class="text-white hover:text-red-400 transition-colors">Services</a>
+      <a href="#references" class="text-white hover:text-red-400 transition-colors">Références</a>
+      <a href="#contact" class="text-white hover:text-red-400 transition-colors">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Section d'en-tête de l'entreprise -->
+  <header class="header-content text-center py-20 px-4">
+    <div class="container mx-auto">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+        Easylife Cameroun
+      </h1>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+        Entreprise spécialisée dans la distribution, la conception, l’installation et la
+        maintenance d’équipements de froid, climatisation, électricité et groupes électrogènes,
+        au service des entreprises publiques et privées au Cameroun. [web:45][page:1]
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section À Propos -->
+    <section id="about-us" class="py-20 px-4">
+      <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Qui sommes‑nous&nbsp;?</h2>
+          <p class="text-lg text-gray-400 leading-relaxed mb-4">
+            Easylife est une société de services camerounaise positionnée sur les
+            métiers du froid et de la climatisation, de l’électricité industrielle
+            et des groupes électrogènes. L’entreprise intervient sur le dimensionnement,
+            l’installation et la maintenance de ces équipements, afin d’en garantir la
+            performance et la durée de vie. [web:45][page:1]
+          </p>
+          <p class="text-lg text-gray-400 leading-relaxed mb-4">
+            Dans un contexte où le coût d’acquisition et d’exploitation de ces
+            installations représente un investissement important pour les entreprises,
+            Easylife aide ses clients à maîtriser leurs dépenses en proposant des
+            solutions adaptées et un suivi régulier. [page:1]
+          </p>
+          <p class="text-lg text-gray-400 leading-relaxed">
+            La société justifie aujourd’hui d’une solide expérience auprès de grands
+            comptes du secteur public et privé au Cameroun, notamment dans les domaines
+            portuaire, financier, industriel et télécoms. [page:1][page:3]
+          </p>
+        </div>
+        <div class="relative w-full h-80 rounded-3xl overflow-hidden shadow-2xl">
+          <!-- Remplace par une vraie photo (chantier / clim / groupes électrogènes) si tu en as -->
+          <img src="images/easylife-installation.jpg"
+               alt="Installation de systèmes de climatisation par Easylife"
+               class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="py-20 px-4 bg-gray-900">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Nos principaux services</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- Distribution & vente -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Vente & distribution d’équipements
+            </h3>
+            <p class="text-sm text-gray-300 mb-3">
+              Easylife est spécialisée dans la vente de climatiseurs des plus grandes
+              marques, ainsi que d’équipements de froid et de groupes électrogènes. [web:45][page:2]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Conseil sur le choix des modèles adaptés aux besoins.</li>
+              <li>Fourniture de pièces de rechange et accessoires. [page:1]</li>
+              <li>Accompagnement par des spécialistes de la vente. [page:2]</li>
+            </ul>
+          </div>
+
+          <!-- Conception & installation -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Conception, dimensionnement & installation
+            </h3>
+            <p class="text-sm text-gray-300 mb-3">
+              La société prend en charge la conception technique, le dimensionnement
+              et la réalisation complète des installations de climatisation et de
+              production de froid. [page:1]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Études de charge thermique et choix des solutions.</li>
+              <li>Installations de centrales de climatisation, split systems, armoires. [page:3]</li>
+              <li>Mise en service et tests de performance.</li>
+            </ul>
+          </div>
+
+          <!-- Maintenance & dépannage -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Maintenance & dépannage
+            </h3>
+            <p class="text-sm text-gray-300 mb-3">
+              Easylife assure la maintenance préventive et curative des systèmes
+              de climatisation et des groupes électrogènes, ainsi que le dépannage
+              en plomberie et électricité. [web:45][page:1][web:47]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Contrats de maintenance préventive.</li>
+              <li>Interventions rapides en cas de panne (dépannage). [web:47]</li>
+              <li>Optimisation de la consommation énergétique des installations.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Références -->
+    <section id="references" class="py-20 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Quelques références clients</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm text-gray-300">
+          <div class="glass-card rounded-2xl p-5">
+            <h3 class="text-lg font-semibold mb-2">Port Autonome de Douala</h3>
+            <p>
+              Mini centrale de climatisation gainable, split systems,
+              climatiseurs et armoires de climatisation. [page:3]
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5">
+            <h3 class="text-lg font-semibold mb-2">AGF Cameroun Assurances</h3>
+            <p>
+              Centrale de climatisation, split systems, armoires de climatisation
+              et groupes électrogènes. [page:3]
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5">
+            <h3 class="text-lg font-semibold mb-2">Immeuble Flatters</h3>
+            <p>
+              Installations de climatisation pour le Consulat des U.S.A, Sanofi
+              Aventis, Proparco, Syngenta, Ernst & Young. [page:3]
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5">
+            <h3 class="text-lg font-semibold mb-2">Orange Cameroun</h3>
+            <p>
+              Entretien de sites GSM dans les régions Littoral, Centre, Sud et
+              Est. [page:3]
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5">
+            <h3 class="text-lg font-semibold mb-2">Banques & institutions</h3>
+            <p>
+              Ecobank, FI‑PME, Cofinest, SRC : centrales et armoires de
+              climatisation, split systems, groupes électrogènes. [page:3]
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5">
+            <h3 class="text-lg font-semibold mb-2">Secteur santé & industrie</h3>
+            <p>
+              Polypharma, Polyclinique St&nbsp;Élie, Multiprint Sérigraphie,
+              Cover Inks : installations de froid industriel et climatisation. [page:3]
+            </p>
+          </div>
+        </div>
+
+        <p class="text-xs text-gray-500 mt-6 text-center">
+          La liste complète des références est consultable sur le site officiel Easylife. [page:3]
+        </p>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-20 px-4 bg-gray-900">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Contact & devis</h2>
+
+        <div class="glass-card rounded-2xl p-8 max-w-2xl mx-auto text-center">
+          <p class="text-sm text-gray-300 mb-4">
+            Pour toute demande de vente, d’installation, de maintenance ou de
+            dépannage en climatisation, froid, plomberie et groupes électrogènes,
+            Easylife met à disposition un formulaire de devis en ligne et une page
+            de contact. [web:47][web:49]
+          </p>
+          <p class="text-sm text-gray-300 mb-4">
+            Les coordonnées complètes (téléphone, adresse, e‑mail) sont disponibles
+            sur le site officiel. [web:49]
+          </p>
+          <a href="http://addedvalue.online/devis.php"
+             class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-semibold mb-3"
+             target="_blank" rel="noopener">
+            Demander un devis en ligne
+          </a>
+          <p class="text-xs text-gray-500">
+            Site officiel :
+            <a href="http://www.addedvalue.online" class="text-blue-400 hover:underline" target="_blank" rel="noopener">
+              www.addedvalue.online
+            </a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="py-6 text-center text-gray-500 text-sm">
+    © 2026 Kamguia Siri Jordan. Tous droits réservés.
+  </footer>
+</body>
+</html>

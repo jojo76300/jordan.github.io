@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InnovQube – Présentation de l'entreprise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #e53935; /* Rouge */
+      --secondary-color: #f57c00; /* Orange */
+      --tertiary-color: #43a047; /* Vert */
+      --quaternary-color: #1976d2; /* Bleu */
+      --background-color: #0f172a;
+      --text-color: #f1f1f1;
+      --secondary-text-color: #b0b0b0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1200px;
+    }
+    .header-content {
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      background-size: cover;
+      background-position: center;
+    }
+    .glass-card {
+      background: rgba(148, 163, 184, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.8);
+      transition: transform 0.3s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-5px);
+    }
+    .team-member-card {
+      transition: transform 0.3s ease;
+    }
+    .team-member-card:hover {
+      transform: scale(1.05);
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(10px);
+      background-color: rgba(15, 23, 42, 0.9);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-gray-100">
+
+  <!-- Menu de navigation fixe -->
+  <nav class="sticky-nav py-4 px-4 shadow-xl">
+    <div class="container mx-auto flex justify-center space-x-6 text-sm md:text-base font-medium">
+      <a href="index.html#internships" class="text-white hover:text-red-400 transition-colors">
+        Retour au portfolio
+      </a>
+      <a href="#about-us" class="text-white hover:text-red-400 transition-colors">À propos</a>
+      <a href="#mission" class="text-white hover:text-red-400 transition-colors">Mission & Valeurs</a>
+      <a href="#services" class="text-white hover:text-red-400 transition-colors">Services</a>
+      <a href="#team" class="text-white hover:text-red-400 transition-colors">Équipe</a>
+    </div>
+  </nav>
+
+  <!-- Section d'en-tête de l'entreprise -->
+  <header class="header-content text-center py-20 px-4">
+    <div class="container mx-auto">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+        InnovQube
+      </h1>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+        Cabinet de conseil et éditeur de solutions SaaS spécialisé dans le cloud,
+        la transformation digitale et l’IA, basé à Noisy‑le‑Grand (Île‑de‑France). [web:32][web:41]
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section À Propos -->
+    <section id="about-us" class="py-20 px-4">
+      <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Qui sommes‑nous&nbsp;?</h2>
+          <p class="text-lg text-gray-300 leading-relaxed mb-4">
+            InnovQube se présente comme un architecte de la transformation numérique :
+            l’entreprise accompagne ses clients dans la définition de leur stratégie
+            cloud et la mise en œuvre de solutions technologiques sur mesure. [web:35]
+          </p>
+          <p class="text-lg text-gray-300 leading-relaxed mb-4">
+            L’équipe s’appuie sur des experts certifiés et des partenariats avec les
+            grands fournisseurs de services cloud (AWS, Azure, Google Cloud, OVHcloud)
+            pour optimiser performance, sécurité et conformité des systèmes. [web:31][web:32]
+          </p>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            Au‑delà du conseil, InnovQube développe également ses propres solutions
+            SaaS et propose des formations pour aider les entreprises à tirer
+            pleinement parti du cloud et de la data. [web:32][web:37]
+          </p>
+        </div>
+        <div class="relative w-full h-80 rounded-3xl overflow-hidden shadow-2xl">
+          <!-- Remplace par un visuel de ton choix (logo / bureau / illustration cloud) -->
+          <img src="images/innovqube-office.jpg"
+               alt="Illustration de la transformation digitale chez InnovQube"
+               class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Mission & Valeurs -->
+    <section id="mission" class="py-20 px-4 bg-slate-900">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Notre mission & nos valeurs</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-cloud-upload-alt text-4xl text-sky-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Succès cloud</h3>
+            <p class="text-sm text-gray-300">
+              Faire de chaque projet cloud un succès retentissant en alignant
+              technologie, stratégie et enjeux métier. [web:35][web:39]
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-lightbulb text-4xl text-yellow-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Innovation</h3>
+            <p class="text-sm text-gray-300">
+              Définir les tendances plutôt que les subir, en concevant des
+              architectures modernes et évolutives. [web:31][web:44]
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-handshake text-4xl text-emerald-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Collaboration</h3>
+            <p class="text-sm text-gray-300">
+              Travailler au plus près des équipes clientes pour co‑construire des
+              solutions adaptées à leurs besoins. [web:32][web:44]
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center">
+            <i class="fas fa-shield-alt text-4xl text-red-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Excellence & sécurité</h3>
+            <p class="text-sm text-gray-300">
+              Garantir des environnements robustes, optimisés et sécurisés tout au
+              long du cycle de vie des projets. [web:31][web:37][web:43]
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="py-20 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Nos principaux services</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- Transformation digitale -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Transformation digitale & stratégie cloud
+            </h3>
+            <p class="text-sm text-gray-300 mb-3">
+              Accompagnement de bout en bout pour définir la vision, la roadmap
+              et les priorités de migration vers le cloud. [web:32][web:37]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Évaluation de l’existant et cadrage stratégique.</li>
+              <li>Définition des architectures cibles (AWS, Azure, GCP, OVHcloud).</li>
+              <li>Plan de migration et conduite du changement. [web:32][web:35]</li>
+            </ul>
+          </div>
+
+          <!-- Solutions cloud & SaaS -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Solutions cloud & développement SaaS
+            </h3>
+            <p class="text-sm text-gray-300 mb-3">
+              Conception et développement de solutions applicatives cloud‑native ou
+              SaaS sur mesure. [web:31][web:32][web:38]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Conception d’architectures micro‑services et APIs.</li>
+              <li>Développement d’outils métiers hébergés dans le cloud.</li>
+              <li>Intégration avec les SI existants et services managés. [web:31][web:37]</li>
+            </ul>
+          </div>
+
+          <!-- Optimisation & FinOps -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Optimisation cloud & FinOps
+            </h3>
+            <p class="text-sm text-gray-300 mb-3">
+              Maîtrise des coûts et amélioration continue de la performance des
+              environnements cloud. [web:37][web:43]
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Analyse des usages et des factures cloud.</li>
+              <li>Recommandations d’optimisation (dimensionnement, réservations, etc.).</li>
+              <li>Mise en place d’une démarche FinOps durable. [web:43]</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Formations -->
+        <div class="mt-12 glass-card rounded-2xl p-8">
+          <h3 class="text-2xl font-semibold mb-3 text-center">
+            Formations & montée en compétences
+          </h3>
+          <p class="text-sm text-gray-300 mb-3 text-center">
+            InnovQube propose également des formations pour aider les équipes à
+            maîtriser les technologies cloud et les bonnes pratiques de la
+            transformation digitale, avec un taux de réussite annoncé de 92&nbsp;%. [web:31]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Équipe -->
+    <section id="team" class="py-20 px-4">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">L’équipe InnovQube</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div class="team-member-card glass-card rounded-2xl p-6">
+            <img src="https://placehold.co/200x200/0ea5e9/ffffff?text=CEO"
+                 alt="Direction InnovQube"
+                 class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+            <h3 class="text-xl font-semibold mb-1">Direction & stratégie</h3>
+            <p class="text-gray-300 text-sm">
+              Pilote la vision cloud et la stratégie de transformation digitale pour
+              les clients grands comptes et PME. [web:35][web:44]
+            </p>
+          </div>
+
+          <div class="team-member-card glass-card rounded-2xl p-6">
+            <img src="https://placehold.co/200x200/22c55e/ffffff?text=Architecte"
+                 alt="Architecte cloud"
+                 class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+            <h3 class="text-xl font-semibold mb-1">Architectes cloud</h3>
+            <p class="text-gray-300 text-sm">
+              Conçoivent des architectures robustes et sécurisées sur les principaux
+              fournisseurs cloud (AWS, Azure, GCP, OVHcloud). [web:31][web:32]
+            </p>
+          </div>
+
+          <div class="team-member-card glass-card rounded-2xl p-6">
+            <img src="https://placehold.co/200x200/f97316/ffffff?text=Dev"
+                 alt="Développeur cloud / SaaS"
+                 class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+            <h3 class="text-xl font-semibold mb-1">Développeurs & DevOps</h3>
+            <p class="text-gray-300 text-sm">
+              Développent les solutions SaaS, automatisent les déploiements et
+              assurent la supervision des plateformes. [web:31][web:38]
+            </p>
+          </div>
+
+          <div class="team-member-card glass-card rounded-2xl p-6">
+            <img src="https://placehold.co/200x200/a855f7/ffffff?text=Consultant"
+                 alt="Consultant FinOps / sécurité"
+                 class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+            <h3 class="text-xl font-semibold mb-1">Consultants FinOps & sécurité</h3>
+            <p class="text-gray-300 text-sm">
+              Aident les clients à maîtriser leurs coûts cloud et à sécuriser leurs
+              environnements tout en restant conformes. [web:43][web:37]
+            </p>
+          </div>
+        </div>
+
+        <!-- Coordonnées / lien site -->
+        <div class="mt-10 glass-card rounded-2xl p-6 max-w-xl mx-auto">
+          <h3 class="text-xl font-semibold mb-2">Implantation & contact</h3>
+          <p class="text-sm text-gray-300 mb-2">
+            InnovQube est installé à Noisy‑le‑Grand, au 6&nbsp;T boulevard du Mont
+            d’Est (93160), au cœur de l’Est parisien. [web:41]
+          </p>
+          <p class="text-xs text-gray-500 mb-1">
+            Pour en savoir plus sur leurs offres et leurs références, consultez&nbsp;:
+            <a href="https://innovqube.com" class="text-blue-400 hover:underline"
+               target="_blank" rel="noopener">
+              innovqube.com
+            </a>. [web:31]
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="py-6 text-center text-gray-500 text-sm">
+    © 2026 Kamguia Siri Jordan. Tous droits réservés.
+  </footer>
+</body>
+</html>

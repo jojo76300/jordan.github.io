@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICAB – Institut Catholique de Bafoussam</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #e53935; /* Rouge */
+      --secondary-color: #f57c00; /* Orange */
+      --tertiary-color: #43a047; /* Vert */
+      --quaternary-color: #1976d2; /* Bleu */
+      --background-color: #1a1a1a;
+      --text-color: #f1f1f1;
+      --secondary-text-color: #b0b0b0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1200px;
+    }
+    .header-content {
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      background-size: cover;
+      background-position: center;
+    }
+    .glass-card {
+      background: rgba(148, 163, 184, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.8);
+      transition: transform 0.3s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-5px);
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(10px);
+      background-color: rgba(15, 23, 42, 0.9);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-gray-100">
+
+  <!-- Menu de navigation fixe -->
+  <nav class="sticky-nav py-4 px-4 shadow-xl">
+    <div class="container mx-auto flex justify-center space-x-6 text-sm md:text-base font-medium">
+      <a href="index.html#internships" class="text-white hover:text-red-400 transition-colors">
+        Retour au portfolio
+      </a>
+      <a href="#about-us" class="text-white hover:text-red-400 transition-colors">À propos</a>
+      <a href="#programs" class="text-white hover:text-red-400 transition-colors">Formations</a>
+      <a href="#diplomas" class="text-white hover:text-red-400 transition-colors">Diplômes</a>
+      <a href="#contact" class="text-white hover:text-red-400 transition-colors">Contact</a>
+    </div>
+  </nav>
+
+  <!-- En-tête -->
+  <header class="header-content text-center py-20 px-4">
+    <div class="container mx-auto">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+        Institut Catholique de Bafoussam (ICAB)
+      </h1>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+        Institut de formation supérieure académique et professionnelle situé à Bafoussam,
+        proposant des formations en BTS et licences dans de nombreux domaines techniques,
+        économiques et théologiques. [page:1]
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <!-- À propos -->
+    <section id="about-us" class="py-20 px-4">
+      <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">À propos de l’ICAB</h2>
+          <p class="text-lg text-gray-300 leading-relaxed mb-4">
+            L’Institut Catholique de Bafoussam (ICAB) est un institut de formation
+            supérieure académique et professionnelle basé à Bafoussam, au Cameroun. [page:1]
+          </p>
+          <p class="text-lg text-gray-300 leading-relaxed mb-4">
+            L’établissement forme aux niveaux BTS et Licence dans des filières variées :
+            commerce international, comptabilité et gestion, assurance, informatique de
+            gestion, banque et finance, secrétariat de direction, logistique et transport,
+            maintenance des systèmes informatiques, génie civil, génie mécanique,
+            informatique industrielle et théologie. [page:1]
+          </p>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            L’ICAB bénéficie d’agréments officiels du ministère de l’Enseignement
+            supérieur, avec un accord de création et une autorisation d’ouverture
+            délivrés en juin 2015. [page:1]
+          </p>
+        </div>
+        <div class="relative w-full h-80 rounded-3xl overflow-hidden shadow-2xl">
+          <!-- À remplacer par un vrai visuel du campus si tu en as un -->
+          <img src="images/icab-campus.jpg"
+               alt="Vue du campus de l’Institut Catholique de Bafoussam"
+               class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Formations / Domaines -->
+    <section id="programs" class="py-20 px-4 bg-slate-900">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Domaines de formation</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm text-gray-200">
+
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Commerce & gestion</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Commerce international.</li>
+              <li>Action commerciale.</li>
+              <li>Comptabilité et gestion des entreprises.</li>
+              <li>Commerce et gestion (licence professionnelle). [page:1]</li>
+            </ul>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Banque, finance & assurance</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Banque et finance.</li>
+              <li>Assurance.</li>
+              <li>Gestion logistique et transport. [page:1]</li>
+            </ul>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Informatique & génie</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Informatique de gestion.</li>
+              <li>Maintenance des systèmes informatiques.</li>
+              <li>Informatique industrielle.</li>
+              <li>Génie informatique (BTS & licence). [page:1]</li>
+              <li>Génie civil, génie mécanique, génie électrique. [page:1]</li>
+            </ul>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Agronomie & ingénierie</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>
+                Diplôme d’ingénieur agronome sous tutelle académique de l’Université
+                de Dschang. [page:1]
+              </li>
+              <li>Agronomie (licence professionnelle, tutelle Université de Dschang). [page:1]</li>
+            </ul>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Théologie & humanités</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Licence de théologie délivrée en autonomie. [page:1]</li>
+            </ul>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-xl font-semibold mb-3">Secrétariat & services</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Secrétariat de direction.</li>
+              <li>Autres spécialités tertiaires liées à la gestion. [page:1]</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Diplômes -->
+    <section id="diplomas" class="py-20 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Diplômes & filières</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-200">
+
+          <!-- BTS -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-2xl font-semibold mb-3">BTS</h3>
+            <p class="mb-3">
+              L’ICAB propose plusieurs Brevets de Technicien Supérieur dans des
+              domaines techniques et tertiaires. [page:1]
+            </p>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Commerce et vente.</li>
+              <li>Génie civil.</li>
+              <li>Génie informatique.</li>
+              <li>Génie mécanique et productique.</li>
+              <li>Gestion. [page:1]</li>
+            </ul>
+          </div>
+
+          <!-- Ingénieur agronome -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-2xl font-semibold mb-3">Ingénieur agronome</h3>
+            <p class="mb-3">
+              Un diplôme d’ingénieur agronome est délivré sous la tutelle académique
+              de l’Université de Dschang, dans le domaine de l’agronomie. [page:1]
+            </p>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Formation théorique et pratique en agronomie.</li>
+              <li>Encadrement académique par l’Université de Dschang. [page:1]</li>
+            </ul>
+          </div>
+
+          <!-- Licences professionnelles (autonomie & tutelle) -->
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="text-2xl font-semibold mb-3">Licences professionnelles</h3>
+            <p class="mb-3">
+              L’établissement délivre des licences professionnelles à la fois en
+              autonomie et sous tutelle académique de l’Université de Dschang. [page:1]
+            </p>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Licence de théologie délivrée en autonomie. [page:1]</li>
+              <li>Licences en agronomie, commerce et gestion, génie civil, génie
+                  électrique, génie informatique, génie mécanique sous tutelle de
+                  l’Université de Dschang. [page:1]</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-4 bg-slate-900">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Informations pratiques</h2>
+
+        <div class="glass-card rounded-2xl p-8 max-w-xl mx-auto text-center text-sm text-gray-200">
+          <p class="mb-2">
+            <span class="font-semibold">Site internet :</span>
+            <a href="http://icabaf.cm/" class="text-blue-400 hover:underline" target="_blank" rel="noopener">
+              http://icabaf.cm/
+            </a> [page:1]
+          </p>
+          <p class="mb-2">
+            <span class="font-semibold">Adresse postale :</span>
+            BP 210 Bafoussam, Cameroun. [page:1]
+          </p>
+          <p class="mb-4">
+            <span class="font-semibold">Téléphone :</span>
+            699003139 – 233445921 [page:1]
+          </p>
+          <p class="text-xs text-gray-400">
+            Pour les conditions d’admission, les concours d’entrée et le coût de la
+            formation, il est recommandé de consulter directement le site officiel
+            de l’ICAB ou de contacter le service administratif. [page:1]
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="py-6 text-center text-gray-500 text-sm">
+    © 2026 Kamguia Siri Jordan. Tous droits réservés.
+  </footer>
+</body>
+</html>
